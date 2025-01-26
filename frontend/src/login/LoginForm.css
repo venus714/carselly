@@ -1,0 +1,98 @@
+/* LoginForm.css */
+
+.section-container {
+    height: 100vh;
+    background-color: #9a616d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    display: flex;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-container {
+    flex: 1;
+    display: none;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .form-container {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .logo-container i {
+    color: #ff6219;
+    margin-right: 10px;
+  }
+  
+  h5 {
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .form-outline {
+    margin-bottom: 1rem;
+  }
+  
+  .form-outline input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-outline label {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  .btn-block {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  a {
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #393f81;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .image-container {
+      display: block;
+    }
+  }
+  
