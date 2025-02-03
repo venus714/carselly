@@ -1,0 +1,92 @@
+
+.home-container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .hero-section {
+    background-color: #f5f5f5;
+    padding: 50px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+    color: #777;
+  }
+  
+  .primary-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .primary-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .features-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+  }
+  
+  .feature {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+  }
+  
+  .secondary-btn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .secondary-btn:hover {
+    background-color: #5a6268;
+  }
+  
+  .benefits-section {
+    background-color: #e9ecef;
+    padding: 50px;
+    border-radius: 10px;
+  }
+  
+  .benefits-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .benefit {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+  }
+  
+  .footer-section {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post '/register', to: 'users#register'
   get '/me', to: 'users#me'
   get '/users', to: 'users#index'
-  post '/car', to: 'users#create'
-  get '/cars', to: 'cars#show'
+  post '/carr', to: 'cars#create'
+  get '/car', to: 'cars#show'
+  get '/cars', to: 'cars#index'
 end
