@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const CarForm = ({ fetchCars }) => {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     model: "",
     Year_of_manufucture: "",
     condition: "",
@@ -22,7 +22,10 @@ const CarForm = ({ fetchCars }) => {
     name: "",
     email: "",
     password_digest: "",
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [carImage, setCarImage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,14 +35,35 @@ const CarForm = ({ fetchCars }) => {
     });
   };
 
+  const handleImageChange = (e) => {
+    setCarImage(e.target.files[0]);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const data = new FormData();
+    Object.keys(formData).forEach((key) => {
+      data.append(key, formData[key]);
+    });
+
+    if (carImage) {
+      data.append("image", carImage);
+    }
+
     try {
-      await axios.post("http://127.0.0.1:3000/cars", formData);
-      fetchCars();  // To refresh the car list after submitting
-      setFormData({}); // Reset the form
+      await axios.post("http://127.0.0.1:3000/carr", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      fetchCars(); // Refresh the car list after submission
+      setFormData(initialFormData); // Reset form
+      setCarImage(null); // Reset image input
+      alert("Car details successfully submitted!");
     } catch (error) {
       console.error("Error submitting car data:", error);
+      alert("Failed to submit car details. Please try again.");
     }
   };
 
@@ -65,6 +89,10 @@ const CarForm = ({ fetchCars }) => {
       <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" />
       <input type="text" name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
       <input type="password" name="password_digest" value={formData.password_digest} onChange={handleChange} placeholder="Password" />
+
+      {/* Image Upload Field */}
+      <input type="file" name="image" onChange={handleImageChange} accept="image/*" />
+
       <button type="submit">Submit</button>
     </form>
   );

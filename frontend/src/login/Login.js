@@ -1,9 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./LoginForm.css";
-import SignUpForm from "../signup/Signup";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../login/LoginForm.css";
 
 const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+  
+    try {
+      const response = await axios.post("http://127.0.0.1:3000/login", {
+        user: { email, password },
+      });
+  
+      if (response.status === 200) {
+        const { token } = response.data;
+        localStorage.setItem("authToken", token); // Store the token for future requests
+        console.log("Login successful!");
+        navigate("/home"); // Redirect to the home page after successful login
+      }
+    } catch (error) {
+      setError("Login failed. Please check your credentials.");
+      console.error("Error during login:", error);
+    }
+  };
+  
+
   return (
     <section className="section-container">
       <div className="card">
@@ -14,21 +40,34 @@ const LoginForm = () => {
           />
         </div>
         <div className="form-container">
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="logo-container">
               <i className="fas fa-cubes fa-2x"></i>
             </div>
             <h5>Sign into your account</h5>
+            {error && <p className="error-message">{error}</p>}
             <div className="form-outline">
-              <input type="email" id="form2Example17" />
-              <label htmlFor="form2Example17">Email address</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <label htmlFor="email">Email address</label>
             </div>
             <div className="form-outline">
-              <input type="password" id="form2Example27" />
-              <label htmlFor="form2Example27">Password</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <label htmlFor="password">Password</label>
             </div>
             <div className="pt-1 mb-4">
-              <button type="button" className="btn-block">
+              <button type="submit" className="btn-block">
                 Login
               </button>
             </div>

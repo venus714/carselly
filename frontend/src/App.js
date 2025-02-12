@@ -19,8 +19,8 @@ function App() {
           <Route path="/" element={<LoginForm />} />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/cars" element={<CarList />} /> {/* Route to view all cars */}
-          <Route path="/add" element={<CarForm />} /> {/* Route to add a car */}
-          <Route path="/home" element={<Home />} /> {/* Route to edit a car */}
+          <Route path="/add" element={<CarForm />} /> {/* Route  */}
+          <Route path="/home" element={<Home />} /> {/* Route */}
          
         </Routes>
       </div>
