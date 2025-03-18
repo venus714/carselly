@@ -8,6 +8,9 @@ import CarList from "./Car/CarList";  // Import the CarList component to view al
 import Home from "./home/Home";
 import "./Car/style.css"
 import Navbar from "../src/Navbar/navbar";
+import Posts from "./posts/Posts";
+
+
 
 function App() {
   return (
@@ -21,6 +24,7 @@ function App() {
           <Route path="/cars" element={<CarList />} /> {/* Route to view all cars */}
           <Route path="/add" element={<CarForm />} /> {/* Route  */}
           <Route path="/home" element={<Home />} /> {/* Route */}
+         < Route path="/posts" element={<Posts />} /> {/* Route */}
          
         </Routes>
       </div>
@@ -29,3 +33,4 @@ function App() {
 }
 
 export default App;
+

@@ -1,23 +1,26 @@
 class AuthController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+  # skip_before_action :authorized, only: [:create]
 
- # app/controllers/auth_controller.rb
-def create
-    user = User.find_by(email: params[:user][:email])
-  
-    if user && user.authenticate(params[:user][:password])
-      token = JsonWebToken.encode(user_id: user.id)
-      render json: { token: token }, status: :ok  # Changed from :accepted (202) to :ok (200)
-    else
-      render json: { error: "Invalid credentials" }, status: :unauthorized
-    end
+  def create
+      @user = User.find_by(email: user_login_params[:email])
+      #User#authenticate comes from BCrypt
+      if @user && @user.authenticate(user_login_params[:password])
+          # encode token comes from ApplicationController
+          token = encode_token({user_id: @user.id })
+          render json: { user: UserSerializer.new(@user), jwt: token }, status: :accepted
+      else
+          render json: { message: 'Invalid username or password' }, status: :unauthorized
+      end
   end
-  
 
-    private
+  # def destroy 
+  #     user_id.delete(:jwt)A
+  #     head :no_content
+  # end
 
-    def user_login_params
-      params.require(:user).permit(:email, :password)
-    end
-    
+  private
+
+  def user_login_params
+    params.require(:user).permit(:email, :password)
+  end
 end

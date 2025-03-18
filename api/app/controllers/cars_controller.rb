@@ -14,11 +14,12 @@ class CarsController < ApplicationController
 
   # Create a new car
   def create
+    Rails.logger.debug "Received params: #{params.inspect}" # Debugging logs
+    
     car = Car.new(car_params)
 
     if car.save
-      # Attach images if present
-      car.images.attach(params[:images]) if params[:images]
+      car.images.attach(params[:car][:images]) if params[:car][:images].present?
       render json: { message: 'Car created successfully', data: car }, status: :created
     else
       render json: { message: 'Car creation failed', errors: car.errors.full_messages }, status: :unprocessable_entity
@@ -36,30 +37,35 @@ class CarsController < ApplicationController
 
   # Delete a car
   def destroy
-    @car.destroy
-    render json: { message: 'Car deleted successfully' }, status: :ok
+    car = Car.find_by(id: params[:id])
+    
+    if car
+      car.destroy
+      render json: { message: 'Car deleted successfully' }, status: :ok
+    else
+      render json: { error: 'Car not found' }, status: :not_found
+    end
   end
-
   private
 
   # Find a car by ID
   def set_car
-    @car = if params[:id]
-             Car.find(params[:id])
-           elsif params[:car]
-             Car.find_by(model: params[:car][:model]) # Add other attributes if needed
-           end
-  
-    render json: { error: 'Car not found' }, status: :not_found unless @car
+    @car = Car.find_by(id: params[:id]) || Car.find_by(model: params.dig(:car, :model))
+    
+    unless @car
+      render json: { error: 'Car not found' }, status: :not_found
+    end
   end
-  
 
   # Strong parameters
   def car_params
-    params.require(:car).permit(
-      :model, :Year_of_manufucture, :condition, :color_in, :color_out, :registered, 
-      :milage, :transmission, :body, :fuel, :engine_size, :horse_power, :description, 
-      :price, :location, :contact, :name, :email, :password_digest, images: []
-    )
+  params.permit(
+    :model, :year_of_manufacture, :condition, :color_in, :color_out, :registered, 
+    :mileage, :transmission, :body, :fuel, :engine_size, :horse_power, :description, 
+    :price, :location, :contact, :name, images: []
+  )
+
+  rescue ActionController::ParameterMissing => e
+    render json: { error: e.message }, status: :bad_request
   end
 end

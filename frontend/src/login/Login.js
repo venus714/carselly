@@ -17,17 +17,20 @@ const LoginForm = () => {
         user: { email, password },
       });
   
-      if (response.status === 200) {
-        const { token } = response.data;
-        localStorage.setItem("authToken", token); // Store the token for future requests
+      console.log("Response data:", response.data); // Debugging
+  
+      if (response.status === 202) { // Check if backend returns 202 instead of 200
+        const token = response.data.jwt; // Ensure this matches your API response
+        localStorage.setItem("authToken", token);
         console.log("Login successful!");
-        navigate("/home"); // Redirect to the home page after successful login
+        navigate("/home"); // Redirect to home page
       }
     } catch (error) {
       setError("Login failed. Please check your credentials.");
       console.error("Error during login:", error);
     }
   };
+  
   
 
   return (
