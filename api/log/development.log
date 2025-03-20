@@ -6438,3 +6438,891 @@ Processing by Rails::PwaController#manifest as JSON
 Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started POST "/posts" for 127.0.0.1 at 2025-03-20 10:33:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Test", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff9016c6158 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-thyp1h.jpg>, @content_type="image/jpeg", @original_filename="pexels-kadiravsarr-24870623.jpg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"pexels-kadiravsarr-24870623.jpg\"\r\nContent-Type: image/jpeg\r\n">]}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://127.0.0.1:3000)
+Received parameters: #<ActionController::Parameters {"post"=>{"title"=>"Test", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff9016c6158 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-thyp1h.jpg>, @content_type="image/jpeg", @original_filename="pexels-kadiravsarr-24870623.jpg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"pexels-kadiravsarr-24870623.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "controller"=>"posts", "action"=>"create"} permitted: false>
+[31mUnpermitted parameter: :post. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x00007ff9005a9e60>, params: {"post"=>{"title"=>"Test", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff9016c6158 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-thyp1h.jpg>, @content_type="image/jpeg", @original_filename="pexels-kadiravsarr-24870623.jpg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"pexels-kadiravsarr-24870623.jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mPost Create (5.1ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "title") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2025-03-20 07:33:57.070920"], ["updated_at", "2025-03-20 07:33:57.070920"], ["title", nil]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+Post created successfully with ID: 17
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 201 Created in 79ms (Views: 6.7ms | ActiveRecord: 24.7ms (1 query, 0 cached) | GC: 3.2ms)
+
+
+Started GET "/posts/" for 127.0.0.1 at 2025-03-20 10:33:57 +0300
+Processing by PostsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_21040 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | GC: 0.0ms)
+Completed 200 OK in 59ms (Views: 47.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/posts/15" for 127.0.0.1 at 2025-03-20 10:34:11 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 15
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 15], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 46ms (Views: 2.1ms | ActiveRecord: 7.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/14" for 127.0.0.1 at 2025-03-20 10:34:19 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 14
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 14], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 16ms (Views: 1.4ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-03-20 10:46:39 +0300
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Test", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff901d86498 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-y6531j.jpeg>, @content_type="image/jpeg", @original_filename="lapi3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"lapi3.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://127.0.0.1:3000)
+Received parameters: #<ActionController::Parameters {"post"=>{"title"=>"Test", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff901d86498 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-y6531j.jpeg>, @content_type="image/jpeg", @original_filename="lapi3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"lapi3.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "controller"=>"posts", "action"=>"create"} permitted: false>
+[31mUnpermitted parameter: :post. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x00007ff901d87528>, params: {"post"=>{"title"=>"Test", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff901d86498 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-y6531j.jpeg>, @content_type="image/jpeg", @original_filename="lapi3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"lapi3.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mPost Create (23.4ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "title") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2025-03-20 07:46:39.496579"], ["updated_at", "2025-03-20 07:46:39.496579"], ["title", nil]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+Post created successfully with ID: 18
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 201 Created in 37ms (Views: 1.9ms | ActiveRecord: 36.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/" for 127.0.0.1 at 2025-03-20 10:46:39 +0300
+Processing by PostsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_21040 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/15" for 127.0.0.1 at 2025-03-20 10:47:00 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 15
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 15], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 22ms (Views: 1.6ms | ActiveRecord: 3.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/16" for 127.0.0.1 at 2025-03-20 10:47:04 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 16
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 16], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 200 OK in 19ms (Views: 1.6ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/17" for 127.0.0.1 at 2025-03-20 10:47:10 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 17
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 17], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 16ms (Views: 1.6ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/18" for 127.0.0.1 at 2025-03-20 10:47:24 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 18
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 18], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 200 OK in 17ms (Views: 1.4ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/19" for 127.0.0.1 at 2025-03-20 10:47:38 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=19):
+  
+app/controllers/posts_controller.rb:78:in `set_post'
+Started GET "/posts/18" for 127.0.0.1 at 2025-03-20 10:47:44 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 18
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 18], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-03-20 10:47:52 +0300
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Test", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff8f9e906e8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-918o42.jpeg>, @content_type="image/jpeg", @original_filename="lapi3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"lapi3.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://127.0.0.1:3000)
+Received parameters: #<ActionController::Parameters {"post"=>{"title"=>"Test", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff8f9e906e8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-918o42.jpeg>, @content_type="image/jpeg", @original_filename="lapi3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"lapi3.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "controller"=>"posts", "action"=>"create"} permitted: false>
+[31mUnpermitted parameter: :post. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x00007ff8f9e91778>, params: {"post"=>{"title"=>"Test", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff8f9e906e8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-918o42.jpeg>, @content_type="image/jpeg", @original_filename="lapi3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"lapi3.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mPost Create (4.3ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "title") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2025-03-20 07:47:52.168840"], ["updated_at", "2025-03-20 07:47:52.168840"], ["title", nil]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mTRANSACTION (51.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+Post created successfully with ID: 19
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 201 Created in 62ms (Views: 0.9ms | ActiveRecord: 56.1ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/posts/18" for 127.0.0.1 at 2025-03-20 10:47:52 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 18
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 18], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2025-03-20 10:48:14 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 2
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `block in show'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `block in show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 58ms (Views: 0.5ms | ActiveRecord: 9.4ms (4 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--611f323a0344fce1b0a317082842e7843ca747f9/lapi3.jpeg" for 127.0.0.1 at 2025-03-20 10:48:14 +0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--0c00042fe1c9de2cd28dfbed9947734dec47ed1e/lapi3.jpeg" for 127.0.0.1 at 2025-03-20 10:48:14 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--0c00042fe1c9de2cd28dfbed9947734dec47ed1e", "filename"=>"lapi3"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--611f323a0344fce1b0a317082842e7843ca747f9", "filename"=>"lapi3"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (2.5ms) [0m[34mGenerated URL for file at key: qrj7i2r60k6ya4dwi3suwgubh4uv (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxcmo3aTJyNjBrNnlhNGR3aTNzdXdndWJoNHV2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTMuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkzLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwNzo1MzoxNC45NjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0046325154ba4cdab6e6add0a33b12795a63e009/lapi3.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxcmo3aTJyNjBrNnlhNGR3aTNzdXdndWJoNHV2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTMuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkzLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwNzo1MzoxNC45NjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0046325154ba4cdab6e6add0a33b12795a63e009/lapi3.jpeg
+Completed 302 Found in 27ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxcmo3aTJyNjBrNnlhNGR3aTNzdXdndWJoNHV2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTMuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkzLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwNzo1MzoxNC45NjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--0046325154ba4cdab6e6add0a33b12795a63e009/lapi3.jpeg" for 127.0.0.1 at 2025-03-20 10:48:14 +0300
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: w9p0y101lidisrbeej4k2wi2rdoo (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3OXAweTEwMWxpZGlzcmJlZWo0azJ3aTJyZG9vIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTMuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkzLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwNzo1MzoxNC45ODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--b780b5345eaef88aca641c50b2096ddd44ee9fdc/lapi3.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3OXAweTEwMWxpZGlzcmJlZWo0azJ3aTJyZG9vIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTMuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkzLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwNzo1MzoxNC45ODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--b780b5345eaef88aca641c50b2096ddd44ee9fdc/lapi3.jpeg
+Completed 302 Found in 37ms (ActiveRecord: 9.5ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3OXAweTEwMWxpZGlzcmJlZWo0azJ3aTJyZG9vIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTMuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkzLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwNzo1MzoxNC45ODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--b780b5345eaef88aca641c50b2096ddd44ee9fdc/lapi3.jpeg" for 127.0.0.1 at 2025-03-20 10:48:14 +0300
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"lapi3"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"lapi3"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/posts/18" for 127.0.0.1 at 2025-03-20 10:50:11 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 18
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 18], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 27ms (Views: 16.9ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 15.8ms)
+
+
+Started GET "/posts/" for 127.0.0.1 at 2025-03-20 10:52:04 +0300
+Processing by PostsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_21040 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.0ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | GC: 1.5ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-03-20 10:52:22 +0300
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Test", "images"=>#<ActionDispatch::Http::UploadedFile:0x00007ff90084b510 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-288kcp.jpeg>, @content_type="image/jpeg", @original_filename="lapi2.jpeg", @headers="Content-Disposition: form-data; name=\"post[images]\"; filename=\"lapi2.jpeg\"\r\nContent-Type: image/jpeg\r\n">}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://127.0.0.1:3000)
+Received parameters: #<ActionController::Parameters {"post"=>{"title"=>"Test", "images"=>#<ActionDispatch::Http::UploadedFile:0x00007ff90084b510 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-288kcp.jpeg>, @content_type="image/jpeg", @original_filename="lapi2.jpeg", @headers="Content-Disposition: form-data; name=\"post[images]\"; filename=\"lapi2.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "controller"=>"posts", "action"=>"create"} permitted: false>
+[31mUnpermitted parameter: :post. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x00007ff900841808>, params: {"post"=>{"title"=>"Test", "images"=>#<ActionDispatch::Http::UploadedFile:0x00007ff90084b510 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-288kcp.jpeg>, @content_type="image/jpeg", @original_filename="lapi2.jpeg", @headers="Content-Disposition: form-data; name=\"post[images]\"; filename=\"lapi2.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mPost Create (5.2ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "title") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2025-03-20 07:52:22.105543"], ["updated_at", "2025-03-20 07:52:22.105543"], ["title", nil]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+Post created successfully with ID: 20
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 201 Created in 21ms (Views: 1.7ms | ActiveRecord: 9.7ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/posts/" for 127.0.0.1 at 2025-03-20 10:52:22 +0300
+Processing by PostsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_21040 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | GC: 0.9ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/posts/20" for 127.0.0.1 at 2025-03-20 10:52:35 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 20
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 20], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/posts/20" for 127.0.0.1 at 2025-03-20 10:53:30 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 20
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 20], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 17ms (Views: 1.0ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/posts/20" for 127.0.0.1 at 2025-03-20 10:56:44 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 20
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 20], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 11ms (Views: 0.9ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-03-20 10:56:44 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/posts" for ::1 at 2025-03-20 10:56:58 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_21040 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.5ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/manifest.json" for ::1 at 2025-03-20 10:56:58 +0300
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.9ms | GC: 0.3ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/posts" for ::1 at 2025-03-20 10:57:37 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"2111", "images"=>["", #<ActionDispatch::Http::UploadedFile:0x00007ff8f9cb91f8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-w0swrj.jpeg>, @content_type="image/jpeg", @original_filename="lapi2.jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"lapi2.jpeg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Create Post"}
+Received parameters: #<ActionController::Parameters {"authenticity_token"=>"rr8WDEeTiPiXhtC5nVKpn6YESxTQ-wpbaaiWPUkZ7_qjBKufLGLiRMiOMmj4ERLjd7KkWSyj7PsuoInINIzIEQ", "title"=>"2111", "images"=>["", #<ActionDispatch::Http::UploadedFile:0x00007ff8f9cb91f8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-w0swrj.jpeg>, @content_type="image/jpeg", @original_filename="lapi2.jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"lapi2.jpeg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} permitted: false>
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x00007ff8f9cbac60>, params: {"authenticity_token"=>"[FILTERED]", "title"=>"2111", "images"=>["", #<ActionDispatch::Http::UploadedFile:0x00007ff8f9cb91f8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-w0swrj.jpeg>, @content_type="image/jpeg", @original_filename="lapi2.jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"lapi2.jpeg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mPost Create (3.2ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "title") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2025-03-20 07:57:37.609020"], ["updated_at", "2025-03-20 07:57:37.609020"], ["title", "2111"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 21], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mActiveStorage::Blob Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "2yg8yypkh6iuszkb25ykju5a4ear"], ["filename", "lapi2.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 152477], ["checksum", "BesKITY2ZnmkUSTLqzdYGA=="], ["created_at", "2025-03-20 07:57:37.623341"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mActiveStorage::Attachment Create (2.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "images"], ["record_type", "Post"], ["record_id", 21], ["blob_id", 7], ["created_at", "2025-03-20 07:57:37.628225"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "2u1woa1om7gng1nmktpn2u869bg3"], ["filename", "lapi2.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 152477], ["checksum", "BesKITY2ZnmkUSTLqzdYGA=="], ["created_at", "2025-03-20 07:57:37.636199"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "images"], ["record_type", "Post"], ["record_id", 21], ["blob_id", 8], ["created_at", "2025-03-20 07:57:37.642480"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mPost Update (0.6ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2025-03-20 07:57:37.649273"], ["id", 21]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+[36m  Disk Storage (1.3ms) [0m[32mUploaded file to key: 2yg8yypkh6iuszkb25ykju5a4ear (checksum: BesKITY2ZnmkUSTLqzdYGA==)[0m
+[36m  Disk Storage (0.9ms) [0m[32mUploaded file to key: 2u1woa1om7gng1nmktpn2u869bg3 (checksum: BesKITY2ZnmkUSTLqzdYGA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: dcdd925d-7e43-48e7-b06d-9ca867d9e421) to Async(default) with arguments: #<GlobalID:0x00007ff900669af8 @uri=#<URI::GID gid://api/ActiveStorage::Blob/7>>
+[ActiveJob] ↳ app/controllers/posts_controller.rb:39:in `create'
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe) to Async(default) with arguments: #<GlobalID:0x00007ff900628f08 @uri=#<URI::GID gid://api/ActiveStorage::Blob/8>>
+[ActiveJob] ↳ app/controllers/posts_controller.rb:39:in `create'
+Post created successfully with ID: 21
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 201 Created in 132ms (Views: 2.3ms | ActiveRecord: 10.6ms (7 queries, 0 cached) | GC: 12.2ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dcdd925d-7e43-48e7-b06d-9ca867d9e421]   [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dcdd925d-7e43-48e7-b06d-9ca867d9e421] Performing ActiveStorage::AnalyzeJob (Job ID: dcdd925d-7e43-48e7-b06d-9ca867d9e421) from Async(default) enqueued at 2025-03-20T07:57:37.690950736Z with arguments: #<GlobalID:0x00007ff900171de8 @uri=#<URI::GID gid://api/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe] Performing ActiveStorage::AnalyzeJob (Job ID: cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe) from Async(default) enqueued at 2025-03-20T07:57:37.696184970Z with arguments: #<GlobalID:0x00007ff901ec4828 @uri=#<URI::GID gid://api/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dcdd925d-7e43-48e7-b06d-9ca867d9e421] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dcdd925d-7e43-48e7-b06d-9ca867d9e421]   [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dcdd925d-7e43-48e7-b06d-9ca867d9e421]   [1m[36mActiveStorage::Blob Update (13.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dcdd925d-7e43-48e7-b06d-9ca867d9e421]   [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1[0m  [["blob_id", 7]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dcdd925d-7e43-48e7-b06d-9ca867d9e421]   [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 21]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dcdd925d-7e43-48e7-b06d-9ca867d9e421]   [1m[36mPost Update (5.4ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2025-03-20 07:57:37.882642"], ["id", 21]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dcdd925d-7e43-48e7-b06d-9ca867d9e421]   [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dcdd925d-7e43-48e7-b06d-9ca867d9e421] Performed ActiveStorage::AnalyzeJob (Job ID: dcdd925d-7e43-48e7-b06d-9ca867d9e421) from Async(default) in 182.54ms
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe]   [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe]   [1m[36mActiveStorage::Blob Update (72.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 8]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe]   [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1[0m  [["blob_id", 8]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe]   [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 21]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe]   [1m[36mPost Update (0.8ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2025-03-20 07:57:37.933394"], ["id", 21]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe]   [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe] Performed ActiveStorage::AnalyzeJob (Job ID: cc0fa77b-e5e9-4f78-9a0d-a3a6d99d93fe) from Async(default) in 159.48ms
+Started GET "/favicon.ico" for ::1 at 2025-03-20 10:57:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/posts" for ::1 at 2025-03-20 10:57:45 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_21040 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 0.4ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2025-03-20 10:57:45 +0300
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/21" for 127.0.0.1 at 2025-03-20 10:57:49 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 21
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 21], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `block in show'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `block in show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 29ms (Views: 1.3ms | ActiveRecord: 2.2ms (4 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NywicHVyIjoiYmxvYl9pZCJ9fQ==--ea799c442d32e022fcf03bf688f651a4103fcc1a/lapi2.jpeg" for 127.0.0.1 at 2025-03-20 10:57:49 +0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--10572ec6bbcbc2d66ee31f5809534a9dad26f264/lapi2.jpeg" for 127.0.0.1 at 2025-03-20 10:57:49 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NywicHVyIjoiYmxvYl9pZCJ9fQ==--ea799c442d32e022fcf03bf688f651a4103fcc1a", "filename"=>"lapi2"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: 2yg8yypkh6iuszkb25ykju5a4ear (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIyeWc4eXlwa2g2aXVzemtiMjV5a2p1NWE0ZWFyIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODowMjo0OS43MDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--06200da2565a2b8d40b2c623f57c23b9008f9355/lapi2.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIyeWc4eXlwa2g2aXVzemtiMjV5a2p1NWE0ZWFyIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODowMjo0OS43MDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--06200da2565a2b8d40b2c623f57c23b9008f9355/lapi2.jpeg
+Completed 302 Found in 11ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--10572ec6bbcbc2d66ee31f5809534a9dad26f264", "filename"=>"lapi2"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIyeWc4eXlwa2g2aXVzemtiMjV5a2p1NWE0ZWFyIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODowMjo0OS43MDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--06200da2565a2b8d40b2c623f57c23b9008f9355/lapi2.jpeg" for 127.0.0.1 at 2025-03-20 10:57:49 +0300
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: 2u1woa1om7gng1nmktpn2u869bg3 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIydTF3b2Exb203Z25nMW5ta3RwbjJ1ODY5YmczIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODowMjo0OS43MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--974894ef0a394c361a92a49ea51cb82a7e7ebb53/lapi2.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIydTF3b2Exb203Z25nMW5ta3RwbjJ1ODY5YmczIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODowMjo0OS43MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--974894ef0a394c361a92a49ea51cb82a7e7ebb53/lapi2.jpeg
+Completed 302 Found in 19ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"lapi2"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIydTF3b2Exb203Z25nMW5ta3RwbjJ1ODY5YmczIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODowMjo0OS43MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--974894ef0a394c361a92a49ea51cb82a7e7ebb53/lapi2.jpeg" for 127.0.0.1 at 2025-03-20 10:57:49 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"lapi2"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2025-03-20 10:58:16 +0300
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2025-03-20 10:59:16 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_21040 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.4ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2025-03-20 10:59:16 +0300
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/19" for 127.0.0.1 at 2025-03-20 11:11:40 +0300
+  
+SyntaxError (/home/student/Desktop/carselly/api/app/controllers/posts_controller.rb:99: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/posts_controller.rb:99: syntax error, unexpected `end', expecting end-of-input
+Started GET "/posts/20" for 127.0.0.1 at 2025-03-20 11:11:43 +0300
+  
+SyntaxError (/home/student/Desktop/carselly/api/app/controllers/posts_controller.rb:99: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/posts_controller.rb:99: syntax error, unexpected `end', expecting end-of-input
+Started GET "/posts/20" for 127.0.0.1 at 2025-03-20 11:12:47 +0300
+  
+NoMethodError (undefined method `save' for nil:NilClass
+
+    if @post.save
+            ^^^^^):
+  
+app/controllers/posts_controller.rb:52:in `<class:PostsController>'
+app/controllers/posts_controller.rb:1:in `<main>'
+Started GET "/posts" for ::1 at 2025-03-20 11:13:21 +0300
+  
+NoMethodError (undefined method `save' for nil:NilClass
+
+    if @post.save
+            ^^^^^):
+  
+app/controllers/posts_controller.rb:52:in `<class:PostsController>'
+app/controllers/posts_controller.rb:1:in `<main>'
+Started GET "/posts" for ::1 at 2025-03-20 11:13:37 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_50020 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | GC: 0.8ms)
+Completed 200 OK in 31ms (Views: 13.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.3ms)
+
+
+Started GET "/manifest.json" for ::1 at 2025-03-20 11:13:38 +0300
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/20" for 127.0.0.1 at 2025-03-20 11:13:49 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 20
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 20], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 46ms (Views: 2.5ms | ActiveRecord: 12.3ms (2 queries, 0 cached) | GC: 1.8ms)
+
+
+Started GET "/posts/20" for 127.0.0.1 at 2025-03-20 11:13:53 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 20
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 20], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 12ms (Views: 1.0ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/posts/21" for 127.0.0.1 at 2025-03-20 11:14:01 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 21
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 21], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `block in show'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `block in show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 80ms (Views: 0.7ms | ActiveRecord: 2.6ms (4 queries, 0 cached) | GC: 3.7ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--10572ec6bbcbc2d66ee31f5809534a9dad26f264/lapi2.jpeg" for 127.0.0.1 at 2025-03-20 11:14:01 +0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NywicHVyIjoiYmxvYl9pZCJ9fQ==--ea799c442d32e022fcf03bf688f651a4103fcc1a/lapi2.jpeg" for 127.0.0.1 at 2025-03-20 11:14:01 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--10572ec6bbcbc2d66ee31f5809534a9dad26f264", "filename"=>"lapi2"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NywicHVyIjoiYmxvYl9pZCJ9fQ==--ea799c442d32e022fcf03bf688f651a4103fcc1a", "filename"=>"lapi2"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[36m  Disk Storage (1.6ms) [0m[34mGenerated URL for file at key: 2u1woa1om7gng1nmktpn2u869bg3 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIydTF3b2Exb203Z25nMW5ta3RwbjJ1ODY5YmczIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODoxOTowMS45MTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--11a6e9b0e92e470fb48d9ab7efafe55c8895ad6e/lapi2.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIydTF3b2Exb203Z25nMW5ta3RwbjJ1ODY5YmczIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODoxOTowMS45MTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--11a6e9b0e92e470fb48d9ab7efafe55c8895ad6e/lapi2.jpeg
+Completed 302 Found in 17ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIydTF3b2Exb203Z25nMW5ta3RwbjJ1ODY5YmczIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODoxOTowMS45MTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--11a6e9b0e92e470fb48d9ab7efafe55c8895ad6e/lapi2.jpeg" for 127.0.0.1 at 2025-03-20 11:14:01 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"lapi2"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: 2yg8yypkh6iuszkb25ykju5a4ear (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIyeWc4eXlwa2g2aXVzemtiMjV5a2p1NWE0ZWFyIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODoxOTowMS45NThaIiwicHVyIjoiYmxvYl9rZXkifX0=--7b85950505380ada59c3876348c8e72a64c380d9/lapi2.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIyeWc4eXlwa2g2aXVzemtiMjV5a2p1NWE0ZWFyIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODoxOTowMS45NThaIiwicHVyIjoiYmxvYl9rZXkifX0=--7b85950505380ada59c3876348c8e72a64c380d9/lapi2.jpeg
+Completed 302 Found in 53ms (ActiveRecord: 25.0ms (1 query, 0 cached) | GC: 3.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIyeWc4eXlwa2g2aXVzemtiMjV5a2p1NWE0ZWFyIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODoxOTowMS45NThaIiwicHVyIjoiYmxvYl9rZXkifX0=--7b85950505380ada59c3876348c8e72a64c380d9/lapi2.jpeg" for 127.0.0.1 at 2025-03-20 11:14:01 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"lapi2"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-03-20 11:14:36 +0300
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Test", "images"=>{" []"=>#<ActionDispatch::Http::UploadedFile:0x00007ff8f9d92318 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-w56kfh.jpg>, @content_type="image/jpeg", @original_filename="pexels-kadiravsarr-24870623.jpg", @headers="Content-Disposition: form-data; name=\"post[images] []\"; filename=\"pexels-kadiravsarr-24870623.jpg\"\r\nContent-Type: image/jpeg\r\n">}}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://127.0.0.1:3000)
+Received parameters: #<ActionController::Parameters {"post"=>{"title"=>"Test", "images"=>{" []"=>#<ActionDispatch::Http::UploadedFile:0x00007ff8f9d92318 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-w56kfh.jpg>, @content_type="image/jpeg", @original_filename="pexels-kadiravsarr-24870623.jpg", @headers="Content-Disposition: form-data; name=\"post[images] []\"; filename=\"pexels-kadiravsarr-24870623.jpg\"\r\nContent-Type: image/jpeg\r\n">}}, "controller"=>"posts", "action"=>"create"} permitted: false>
+[31mUnpermitted parameter: :images. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x00007ff8f9dcc928>, params: {"post"=>{"title"=>"Test", "images"=>{" []"=>#<ActionDispatch::Http::UploadedFile:0x00007ff8f9d92318 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-w56kfh.jpg>, @content_type="image/jpeg", @original_filename="pexels-kadiravsarr-24870623.jpg", @headers="Content-Disposition: form-data; name=\"post[images] []\"; filename=\"pexels-kadiravsarr-24870623.jpg\"\r\nContent-Type: image/jpeg\r\n">}}, "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mPost Create (5.1ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "title") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2025-03-20 08:14:36.261769"], ["updated_at", "2025-03-20 08:14:36.261769"], ["title", "Test"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+Post created successfully with ID: 22
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 201 Created in 39ms (Views: 20.5ms | ActiveRecord: 8.8ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/posts/21" for 127.0.0.1 at 2025-03-20 11:14:36 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 21
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 21], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `block in show'
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `block in show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 32ms (Views: 0.7ms | ActiveRecord: 3.3ms (4 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/posts/20" for 127.0.0.1 at 2025-03-20 11:14:55 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 20
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 20], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 17ms (Views: 1.3ms | ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/21" for 127.0.0.1 at 2025-03-20 11:14:57 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 21], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `block in show'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `block in show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 200 OK in 34ms (Views: 1.5ms | ActiveRecord: 2.2ms (4 queries, 0 cached) | GC: 13.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIyeWc4eXlwa2g2aXVzemtiMjV5a2p1NWE0ZWFyIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODoxOTowMS45NThaIiwicHVyIjoiYmxvYl9rZXkifX0=--7b85950505380ada59c3876348c8e72a64c380d9/lapi2.jpeg" for 127.0.0.1 at 2025-03-20 11:14:57 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIydTF3b2Exb203Z25nMW5ta3RwbjJ1ODY5YmczIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaTIuanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2xhcGkyLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yMFQwODoxOTowMS45MTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--11a6e9b0e92e470fb48d9ab7efafe55c8895ad6e/lapi2.jpeg" for 127.0.0.1 at 2025-03-20 11:14:57 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"lapi2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"lapi2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/22" for 127.0.0.1 at 2025-03-20 11:15:00 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 22
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 22], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 17ms (Views: 1.1ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2025-03-20 11:15:39 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_50020 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 0.8ms)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/manifest.json" for ::1 at 2025-03-20 11:15:40 +0300
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2025-03-20 11:15:42 +0300
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2025-03-20 11:17:15 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_50020 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.1ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 1.3ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/manifest.json" for ::1 at 2025-03-20 11:17:15 +0300
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/cars" for 127.0.0.1 at 2025-03-20 11:17:29 +0300
+Processing by CarsController#index as HTML
+[active_model_serializers]   [1m[36mCar Load (1.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+[active_model_serializers]   ↳ app/controllers/cars_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (34.15ms)
+Completed 200 OK in 42ms (Views: 26.3ms | ActiveRecord: 9.0ms (1 query, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/cars" for 127.0.0.1 at 2025-03-20 11:17:29 +0300
+Processing by CarsController#index as HTML
+[active_model_serializers]   [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+[active_model_serializers]   ↳ app/controllers/cars_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.35ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-03-20 11:18:13 +0300
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Test", "images"=>{" []"=>#<ActionDispatch::Http::UploadedFile:0x00007ff901d4a0d8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-f07qwo.jpeg>, @content_type="image/jpeg", @original_filename="me3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images] []\"; filename=\"me3.jpeg\"\r\nContent-Type: image/jpeg\r\n">}}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://127.0.0.1:3000)
+Received parameters: #<ActionController::Parameters {"post"=>{"title"=>"Test", "images"=>{" []"=>#<ActionDispatch::Http::UploadedFile:0x00007ff901d4a0d8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-f07qwo.jpeg>, @content_type="image/jpeg", @original_filename="me3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images] []\"; filename=\"me3.jpeg\"\r\nContent-Type: image/jpeg\r\n">}}, "controller"=>"posts", "action"=>"create"} permitted: false>
+[31mUnpermitted parameter: :images. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x00007ff901d448e0>, params: {"post"=>{"title"=>"Test", "images"=>{" []"=>#<ActionDispatch::Http::UploadedFile:0x00007ff901d4a0d8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-f07qwo.jpeg>, @content_type="image/jpeg", @original_filename="me3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images] []\"; filename=\"me3.jpeg\"\r\nContent-Type: image/jpeg\r\n">}}, "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mPost Create (5.0ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "title") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2025-03-20 08:18:13.216382"], ["updated_at", "2025-03-20 08:18:13.216382"], ["title", "Test"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+Post created successfully with ID: 23
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 201 Created in 20ms (Views: 1.0ms | ActiveRecord: 8.1ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/posts/" for 127.0.0.1 at 2025-03-20 11:18:13 +0300
+Processing by PostsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_50020 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.5ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-03-20 11:18:22 +0300
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"Test", "images"=>{" []"=>#<ActionDispatch::Http::UploadedFile:0x00007ff8f9e6e4f8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-h4w69d.jpeg>, @content_type="image/jpeg", @original_filename="me3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images] []\"; filename=\"me3.jpeg\"\r\nContent-Type: image/jpeg\r\n">}}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://127.0.0.1:3000)
+Received parameters: #<ActionController::Parameters {"post"=>{"title"=>"Test", "images"=>{" []"=>#<ActionDispatch::Http::UploadedFile:0x00007ff8f9e6e4f8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-h4w69d.jpeg>, @content_type="image/jpeg", @original_filename="me3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images] []\"; filename=\"me3.jpeg\"\r\nContent-Type: image/jpeg\r\n">}}, "controller"=>"posts", "action"=>"create"} permitted: false>
+[31mUnpermitted parameter: :images. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x00007ff8f9e6fe70>, params: {"post"=>{"title"=>"Test", "images"=>{" []"=>#<ActionDispatch::Http::UploadedFile:0x00007ff8f9e6e4f8 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-h4w69d.jpeg>, @content_type="image/jpeg", @original_filename="me3.jpeg", @headers="Content-Disposition: form-data; name=\"post[images] []\"; filename=\"me3.jpeg\"\r\nContent-Type: image/jpeg\r\n">}}, "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mPost Create (6.8ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "title") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2025-03-20 08:18:22.378281"], ["updated_at", "2025-03-20 08:18:22.378281"], ["title", "Test"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mTRANSACTION (17.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+Post created successfully with ID: 24
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 201 Created in 40ms (Views: 2.3ms | ActiveRecord: 24.3ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/posts/" for 127.0.0.1 at 2025-03-20 11:18:22 +0300
+Processing by PostsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_50020 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.5ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | GC: 0.8ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/posts/24" for 127.0.0.1 at 2025-03-20 11:18:35 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"24"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 24
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 24], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 17ms (Views: 1.2ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/posts/24" for 127.0.0.1 at 2025-03-20 11:26:09 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"24"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 24
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 24], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 25ms (Views: 0.8ms | ActiveRecord: 8.4ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-03-20 11:35:39 +0300
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"new", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff8f9d11c18 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-vr7r0z.jpeg>, @content_type="image/jpeg", @original_filename="logo.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"logo.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://127.0.0.1:3000)
+Received parameters: #<ActionController::Parameters {"post"=>{"title"=>"new", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff8f9d11c18 @tempfile=#<Tempfile:/tmp/RackMultipart20250320-14381-vr7r0z.jpeg>, @content_type="image/jpeg", @original_filename="logo.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"logo.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "controller"=>"posts", "action"=>"create"} permitted: false>
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mPost Create (28.5ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "title") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2025-03-20 08:35:40.015268"], ["updated_at", "2025-03-20 08:35:40.015268"], ["title", "new"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 25], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "dzcspsb9uszs66u073ik28ainzlu"], ["filename", "logo.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 22109], ["checksum", "BtsoRxH7UbwjMz0H9N8K3A=="], ["created_at", "2025-03-20 08:35:40.053846"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mActiveStorage::Attachment Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "images"], ["record_type", "Post"], ["record_id", 25], ["blob_id", 9], ["created_at", "2025-03-20 08:35:40.062318"]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mPost Update (0.7ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2025-03-20 08:35:40.085008"], ["id", 25]]
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:39:in `create'
+[36m  Disk Storage (0.7ms) [0m[32mUploaded file to key: dzcspsb9uszs66u073ik28ainzlu (checksum: BtsoRxH7UbwjMz0H9N8K3A==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c915ff84-a544-42ed-ad51-b7feb09ee903) to Async(default) with arguments: #<GlobalID:0x00007ff900791cc8 @uri=#<URI::GID gid://api/ActiveStorage::Blob/9>>
+[ActiveJob] ↳ app/controllers/posts_controller.rb:39:in `create'
+Post created successfully with ID: 25
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 201 Created in 168ms (Views: 1.8ms | ActiveRecord: 45.5ms (5 queries, 0 cached) | GC: 18.4ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c915ff84-a544-42ed-ad51-b7feb09ee903]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c915ff84-a544-42ed-ad51-b7feb09ee903] Performing ActiveStorage::AnalyzeJob (Job ID: c915ff84-a544-42ed-ad51-b7feb09ee903) from Async(default) enqueued at 2025-03-20T08:35:40.167406212Z with arguments: #<GlobalID:0x00007ff90076d300 @uri=#<URI::GID gid://api/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c915ff84-a544-42ed-ad51-b7feb09ee903] Skipping image analysis because the ruby-vips gem isn't installed
+Started GET "/posts/" for 127.0.0.1 at 2025-03-20 11:35:40 +0300
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c915ff84-a544-42ed-ad51-b7feb09ee903]   [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c915ff84-a544-42ed-ad51-b7feb09ee903]   [1m[36mActiveStorage::Blob Update (4.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 9]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c915ff84-a544-42ed-ad51-b7feb09ee903]   [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1[0m  [["blob_id", 9]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c915ff84-a544-42ed-ad51-b7feb09ee903]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 25]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c915ff84-a544-42ed-ad51-b7feb09ee903]   [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2025-03-20 08:35:40.232470"], ["id", 25]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c915ff84-a544-42ed-ad51-b7feb09ee903]   [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c915ff84-a544-42ed-ad51-b7feb09ee903] Performed ActiveStorage::AnalyzeJob (Job ID: c915ff84-a544-42ed-ad51-b7feb09ee903) from Async(default) in 53.93ms
+Processing by PostsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_posts_index_html_erb___356713768069013934_50020 at /home/student/Desktop/carselly/api/app/views/posts/index.html.erb:3)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.8ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/posts/25" for 127.0.0.1 at 2025-03-20 11:35:55 +0300
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"25"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:78:in `set_post'
+Fetching post with ID: 25
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 25], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14:in `block in show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 19ms (Views: 1.0ms | ActiveRecord: 1.9ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--cf5af484c41af225beb7b7af0cc235f71457227f/logo.jpeg" for 127.0.0.1 at 2025-03-20 11:35:55 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--cf5af484c41af225beb7b7af0cc235f71457227f", "filename"=>"logo"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[36m  Disk Storage (1.3ms) [0m[34mGenerated URL for file at key: dzcspsb9uszs66u073ik28ainzlu (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkemNzcHNiOXVzenM2NnUwNzNpazI4YWluemx1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjBUMDg6NDA6NTUuMTQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--c8c7a0c672f0aa46acc0a6c8077c77f9a721f230/logo.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkemNzcHNiOXVzenM2NnUwNzNpazI4YWluemx1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjBUMDg6NDA6NTUuMTQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--c8c7a0c672f0aa46acc0a6c8077c77f9a721f230/logo.jpeg
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkemNzcHNiOXVzenM2NnUwNzNpazI4YWluemx1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjBUMDg6NDA6NTUuMTQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--c8c7a0c672f0aa46acc0a6c8077c77f9a721f230/logo.jpeg" for 127.0.0.1 at 2025-03-20 11:35:55 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
