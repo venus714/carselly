@@ -1,16 +1,22 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
-  # GET /posts or /posts.json
-  def index
-    @posts = Post.all
-  end
+
+def index
+  @posts = Post.all
+
+  render json: @posts.map { |post|
+    post.as_json.merge(
+      images: post.images.map { |image| url_for(image) }
+    )
+  }
+end
+
+
 
   # GET /posts/1 or /posts/1.json
   def show
-    Rails.logger.info "Fetching post with ID: #{@post.id}"
-    
-    render json: @post.as_json(include: :images).merge(
+    render json: @post.as_json.merge(
       images: @post.images.map { |image| url_for(image) }
     )
   end
@@ -26,19 +32,21 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    Rails.logger.info "Received parameters: #{params.inspect}" # Debugging log
-  
-    @post = Post.new(post_params) # Use the filtered parameters
-  
-    if params[:images].present?
-      params[:images].each do |image|
+    Rails.logger.info "Received parameters: #{params.inspect}"
+
+    @post = Post.new(post_params)
+
+    if params[:post][:images].present?
+      params[:post][:images].each do |image|
         @post.images.attach(image) unless image.blank?
       end
     end
-  
+
     if @post.save
       Rails.logger.info "Post created successfully with ID: #{@post.id}"
-      render json: @post, status: :created, location: @post
+      render json: @post.as_json(include: :images).merge(
+        images: @post.images.map { |image| url_for(image) }
+      ), status: :created
     else
       Rails.logger.error "Failed to create post: #{@post.errors.full_messages}"
       render json: @post.errors, status: :unprocessable_entity
@@ -51,7 +59,9 @@ class PostsController < ApplicationController
 
     if @post.update(post_params)
       Rails.logger.info "Post updated successfully"
-      render :show, status: :ok, location: @post
+      render json: @post.as_json(include: :images).merge(
+        images: @post.images.map { |image| url_for(image) }
+      ), status: :ok
     else
       Rails.logger.error "Failed to update post: #{@post.errors.full_messages}"
       render json: @post.errors, status: :unprocessable_entity
@@ -61,14 +71,11 @@ class PostsController < ApplicationController
   # DELETE /posts/1 or /posts/1.json
   def destroy
     Rails.logger.info "Deleting post with ID: #{@post.id}"
-    
+
     @post.destroy!
     
     Rails.logger.info "Post deleted successfully"
-    respond_to do |format|
-      format.html { redirect_to posts_path, status: :see_other, notice: "Post was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    head :no_content
   end
 
   private
@@ -80,7 +87,12 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, images: [])
+    params.require(:post).permit(
+      :title, :model, :year_of_manufacture, :condition, 
+      :color_in, :color_out, :registered, :mileage, 
+      :transmission, :body, :fuel, :engine_size, 
+      :horse_power, :description, :price, :location, 
+      :contact, :name, images: []
+    )
   end
-  
 end

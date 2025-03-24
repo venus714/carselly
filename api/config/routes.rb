@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/users', to: 'users#index'
   post '/carr', to: 'cars#create'
   get '/car', to: 'cars#show'
-  get '/cars', to: 'cars#index'
+  get '/cars', to: 'cars#show'
+  get '/possts', to: 'posts#index'
    delete '/cars/:id', to: 'cars#destroy'
 end
