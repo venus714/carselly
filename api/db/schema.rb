@@ -42,28 +42,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_18_095007) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "cars", force: :cascade do |t|
-    t.string "model"
-    t.integer "year_of_manufacture"
-    t.string "condition"
-    t.string "color_in"
-    t.string "color_out"
-    t.boolean "registered"
-    t.integer "mileage"
-    t.string "transmission"
-    t.string "body"
-    t.string "fuel"
-    t.integer "engine_size"
-    t.integer "horse_power"
-    t.string "description"
-    t.integer "price"
-    t.string "location"
-    t.string "contact"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "model", null: false
     t.integer "year_of_manufacture", null: false

@@ -113,18 +113,18 @@ function Posts() {
         </button>
       </form>
 
-      <h2>Retrieve Images</h2>
-      <div>
+      {/* <h2>Retrieve Images</h2> */}
+      {/* <div>
         <input type="number" ref={postToGet} placeholder="Post ID to retrieve" />
         <button onClick={getImages}>Get Images</button>
-      </div>
+      </div> */}
 
-      <h2>Images</h2>
-      <div className="images">
+      {/* <h2>Images</h2> */}
+      {/* <div className="images">
         {images.map((image, index) => (
           <img key={index} src={image} alt="uploaded" style={{ width: "100px", height: "100px" }} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

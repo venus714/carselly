@@ -37,6 +37,7 @@ const CarCard = () => {
         cars.map((car, index) => (
           <div key={index} className="car-card">
             {car?.images?.length > 0 ? (
+              
               <div className="car-images">
                 {car.images.map((image, idx) => (
                   <img key={idx} src={image} alt={car?.model || "Car Image"} className="car-image" />

@@ -15,9 +15,9 @@ function Navbar() {
           <li className="nav-item">
             <Link to="/cars" className="nav-link">Cars</Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link to="/add" className="nav-link">Add Car</Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link to="/posts" className="nav-link">Post</Link>
           </li>

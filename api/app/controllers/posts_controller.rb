@@ -2,24 +2,22 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
 
-def index
-  @posts = Post.all
-
-  render json: @posts.map { |post|
-    post.as_json.merge(
-      images: post.images.map { |image| url_for(image) }
-    )
-  }
-end
-
-
-
-  # GET /posts/1 or /posts/1.json
+  def index
+    @posts = Post.all
+  
+    render json: @posts.map { |post|
+      post.as_json.merge(
+        images: post.images.map { |image| url_for(image) }.uniq
+      )
+    }
+  end
+  
   def show
     render json: @post.as_json.merge(
-      images: @post.images.map { |image| url_for(image) }
+      images: @post.images.map { |image| url_for(image) }.uniq
     )
   end
+  
 
   # GET /posts/new
   def new
@@ -33,18 +31,12 @@ end
   # POST /posts or /posts.json
   def create
     Rails.logger.info "Received parameters: #{params.inspect}"
-
+  
     @post = Post.new(post_params)
-
-    if params[:post][:images].present?
-      params[:post][:images].each do |image|
-        @post.images.attach(image) unless image.blank?
-      end
-    end
-
+  
     if @post.save
       Rails.logger.info "Post created successfully with ID: #{@post.id}"
-      render json: @post.as_json(include: :images).merge(
+      render json: @post.as_json.merge(
         images: @post.images.map { |image| url_for(image) }
       ), status: :created
     else
@@ -52,7 +44,9 @@ end
       render json: @post.errors, status: :unprocessable_entity
     end
   end
-
+  
+  
+  
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
     Rails.logger.info "Updating post with ID: #{@post.id} with params: #{params.inspect}"

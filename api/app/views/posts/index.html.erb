@@ -7,7 +7,92 @@
   </p>
 
   <p>
-    <%= f.label :images %><br>
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </p>
+
+  <p>
+    <%= f.label :year_of_manufacture %><br>
+    <%= f.number_field :year_of_manufacture %>
+  </p>
+
+  <p>
+    <%= f.label :condition %><br>
+    <%= f.text_field :condition %>
+  </p>
+
+  <p>
+    <%= f.label :color_in, "Interior Color" %><br>
+    <%= f.text_field :color_in %>
+  </p>
+
+  <p>
+    <%= f.label :color_out, "Exterior Color" %><br>
+    <%= f.text_field :color_out %>
+  </p>
+
+  <p>
+    <%= f.label :registered %><br>
+    <%= f.text_field :registered %>
+  </p>
+
+  <p>
+    <%= f.label :mileage %><br>
+    <%= f.number_field :mileage %>
+  </p>
+
+  <p>
+    <%= f.label :transmission %><br>
+    <%= f.text_field :transmission %>
+  </p>
+
+  <p>
+    <%= f.label :body, "Body Type" %><br>
+    <%= f.text_field :body %>
+  </p>
+
+  <p>
+    <%= f.label :fuel, "Fuel Type" %><br>
+    <%= f.text_field :fuel %>
+  </p>
+
+  <p>
+    <%= f.label :engine_size, "Engine Size (cc)" %><br>
+    <%= f.number_field :engine_size %>
+  </p>
+
+  <p>
+    <%= f.label :horse_power, "Horse Power" %><br>
+    <%= f.number_field :horse_power %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </p>
+
+  <p>
+    <%= f.label :contact, "Contact Information" %><br>
+    <%= f.text_field :contact %>
+  </p>
+
+  <p>
+    <%= f.label :name, "Your Name" %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :images, "Upload Images" %><br>
     <%= f.file_field :images, multiple: true %>
   </p>
 

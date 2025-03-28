@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginForm from "./login/Login";
 import SignUpForm from "../src/signup/Signup";
 import CarCard from "./Car/CarCard";
-import CarForm from "./Car/CarForm";
-import CarList from "./Car/CarList";  // Import the CarList component to view all cars
+// import CarForm from "./Car/CarForm";
 import Home from "./home/Home";
 import "./Car/style.css"
 import Navbar from "../src/Navbar/navbar";
@@ -22,7 +21,7 @@ function App() {
           <Route path="/" element={<LoginForm />} />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/cars" element={<CarCard />} /> {/* Route to view all cars */}
-          <Route path="/add" element={<CarForm />} /> {/* Route  */}
+          {/* <Route path="/add" element={<CarForm />} /> Route  */}
           <Route path="/home" element={<Home />} /> {/* Route */}
          < Route path="/posts" element={<Posts />} /> {/* Route */}
          
