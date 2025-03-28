@@ -18823,3 +18823,1037 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/possts" for 127.0.0.1 at 2025-03-28 14:33:44 +0300
+Processing by PostsController#index as */*
+  [1m[36mPost Load (41.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `map'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 3], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 4], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 9], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+No serializer found for resource: {"id"=>1, "model"=>"2009", "year_of_manufacture"=>2012, "condition"=>"good", "color_in"=>"blue", "color_out"=>"black", "registered"=>"no", "mileage"=>1200, "transmission"=>"fffff", "body"=>"hhhhhhh", "fuel"=>"diesel", "engine_size"=>34, "horse_power"=>560, "description"=>"dfcghvbh", "price"=>"1000000.0", "location"=>"nairobi", "contact"=>"0792828282", "name"=>"bow", "created_at"=>"2025-03-26T11:49:04.865Z", "updated_at"=>"2025-03-26T11:49:05.094Z", "title"=>"bmw", :images=>["http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--739ce8c85a860478d2d6b75134c1c1a9c2dbc379/venus-photo.jpeg", "http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--d7a3abeb8963e5dda98100310da0b66ecdfdc5af/venus-photo.jpeg"]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.55ms)
+Completed 200 OK in 174ms (Views: 10.7ms | ActiveRecord: 69.4ms (25 queries, 0 cached) | GC: 14.3ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--739ce8c85a860478d2d6b75134c1c1a9c2dbc379/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:33:44 +0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--611f323a0344fce1b0a317082842e7843ca747f9/logo.jpeg" for 127.0.0.1 at 2025-03-28 14:33:44 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--739ce8c85a860478d2d6b75134c1c1a9c2dbc379", "filename"=>"venus-photo"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--611f323a0344fce1b0a317082842e7843ca747f9", "filename"=>"logo"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.1ms) [0m[34mGenerated URL for file at key: fkmxg711qk9islsxzo6c26x6pm1w (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJma214ZzcxMXFrOWlzbHN4em82YzI2eDZwbTF3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NC44ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--0d305e76e8f32e8f1db03644f23264533a965f92/venus-photo.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJma214ZzcxMXFrOWlzbHN4em82YzI2eDZwbTF3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NC44ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--0d305e76e8f32e8f1db03644f23264533a965f92/venus-photo.jpeg
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJma214ZzcxMXFrOWlzbHN4em82YzI2eDZwbTF3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NC44ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--0d305e76e8f32e8f1db03644f23264533a965f92/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:33:44 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  [1m[36mActiveStorage::Blob Load (4.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: 90n0gwuxpbi3f2b928fzoswvv9s5 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI5MG4wZ3d1eHBiaTNmMmI5Mjhmem9zd3Z2OXM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDQuOTA1WiIsInB1ciI6ImJsb2Jfa2V5In19--f6235a8daca20feb09e1131255a1b9bcfba3583f/logo.jpeg)[0m
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI5MG4wZ3d1eHBiaTNmMmI5Mjhmem9zd3Z2OXM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDQuOTA1WiIsInB1ciI6ImJsb2Jfa2V5In19--f6235a8daca20feb09e1131255a1b9bcfba3583f/logo.jpeg
+Completed 302 Found in 30ms (ActiveRecord: 13.9ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI5MG4wZ3d1eHBiaTNmMmI5Mjhmem9zd3Z2OXM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDQuOTA1WiIsInB1ciI6ImJsb2Jfa2V5In19--f6235a8daca20feb09e1131255a1b9bcfba3583f/logo.jpeg" for 127.0.0.1 at 2025-03-28 14:33:44 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NiwicHVyIjoiYmxvYl9pZCJ9fQ==--d828729d1657d21dd4d6065a7bce9662583cc8a6/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:33:44 +0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--10572ec6bbcbc2d66ee31f5809534a9dad26f264/pexels-daisy-anderson-5584279.jpg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NiwicHVyIjoiYmxvYl9pZCJ9fQ==--d828729d1657d21dd4d6065a7bce9662583cc8a6", "filename"=>"me2"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OCwicHVyIjoiYmxvYl9pZCJ9fQ==--10572ec6bbcbc2d66ee31f5809534a9dad26f264", "filename"=>"pexels-daisy-anderson-5584279"}
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: 2rtlha09uakfmsx0ds273j8kg2vp (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIycnRsaGEwOXVha2Ztc3gwZHMyNzNqOGtnMnZwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjAyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ff646979888fa29461cf70ed8ac0e77124b0db9c/me2.jpeg)[0m
+  [1m[36mActiveStorage::Blob Load (2.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIycnRsaGEwOXVha2Ztc3gwZHMyNzNqOGtnMnZwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjAyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ff646979888fa29461cf70ed8ac0e77124b0db9c/me2.jpeg
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: libmmspmc1yiqmhpsdniyu7hxin0 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsaWJtbXNwbWMxeWlxbWhwc2RuaXl1N2h4aW4wIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--3344223a038f9d0ed595aae1b5d0350ff7fe524f/pexels-daisy-anderson-5584279.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsaWJtbXNwbWMxeWlxbWhwc2RuaXl1N2h4aW4wIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--3344223a038f9d0ed595aae1b5d0350ff7fe524f/pexels-daisy-anderson-5584279.jpg
+Completed 302 Found in 9ms (ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--d7a3abeb8963e5dda98100310da0b66ecdfdc5af/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIycnRsaGEwOXVha2Ztc3gwZHMyNzNqOGtnMnZwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjAyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ff646979888fa29461cf70ed8ac0e77124b0db9c/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsaWJtbXNwbWMxeWlxbWhwc2RuaXl1N2h4aW4wIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--3344223a038f9d0ed595aae1b5d0350ff7fe524f/pexels-daisy-anderson-5584279.jpg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-daisy-anderson-5584279"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--d7a3abeb8963e5dda98100310da0b66ecdfdc5af", "filename"=>"venus-photo"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: nwjjufe84vc3lpm6pkshb54oma86 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJud2pqdWZlODR2YzNscG02cGtzaGI1NG9tYTg2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4wNjFaIiwicHVyIjoiYmxvYl9rZXkifX0=--c717ef7a2a8aef5db929c80e07ee2672b470ae24/venus-photo.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJud2pqdWZlODR2YzNscG02cGtzaGI1NG9tYTg2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4wNjFaIiwicHVyIjoiYmxvYl9rZXkifX0=--c717ef7a2a8aef5db929c80e07ee2672b470ae24/venus-photo.jpeg
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--cf5af484c41af225beb7b7af0cc235f71457227f/resume.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTAsInB1ciI6ImJsb2JfaWQifX0=--3f5258e17c2ca852c4889a99dce24e26057997a7/resume.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJud2pqdWZlODR2YzNscG02cGtzaGI1NG9tYTg2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4wNjFaIiwicHVyIjoiYmxvYl9rZXkifX0=--c717ef7a2a8aef5db929c80e07ee2672b470ae24/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--cf5af484c41af225beb7b7af0cc235f71457227f", "filename"=>"resume"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: luzughlqopb2owrq49xww7jui7o3 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsdXp1Z2hscW9wYjJvd3JxNDl4d3c3anVpN28zIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjA4OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e217d8481caf396ef14d300e4f64dc6498e274c7/resume.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsdXp1Z2hscW9wYjJvd3JxNDl4d3c3anVpN28zIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjA4OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e217d8481caf396ef14d300e4f64dc6498e274c7/resume.jpeg
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsdXp1Z2hscW9wYjJvd3JxNDl4d3c3anVpN28zIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjA4OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e217d8481caf396ef14d300e4f64dc6498e274c7/resume.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTAsInB1ciI6ImJsb2JfaWQifX0=--3f5258e17c2ca852c4889a99dce24e26057997a7", "filename"=>"resume"}
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTEsInB1ciI6ImJsb2JfaWQifX0=--ebd06124eef30cac79a2751d8e1ed78516ef0667/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: yte2ebiy7pnb6d95ylxr8gi5ild0 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ5dGUyZWJpeTdwbmI2ZDk1eWx4cjhnaTVpbGQwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjEwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b7793f764a6d8c0d293df122625b0a64f70d5c2b/resume.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ5dGUyZWJpeTdwbmI2ZDk1eWx4cjhnaTVpbGQwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjEwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b7793f764a6d8c0d293df122625b0a64f70d5c2b/resume.jpeg
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ5dGUyZWJpeTdwbmI2ZDk1eWx4cjhnaTVpbGQwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjEwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b7793f764a6d8c0d293df122625b0a64f70d5c2b/resume.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"resume"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTIsInB1ciI6ImJsb2JfaWQifX0=--1ed263c00c0be4938a4f88c6a0472633d799a4cf/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTEsInB1ciI6ImJsb2JfaWQifX0=--ebd06124eef30cac79a2751d8e1ed78516ef0667", "filename"=>"me2"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: n01bi73eox31uukbpjae49pw7l4w (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJuMDFiaTczZW94MzF1dWticGphZTQ5cHc3bDR3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709574ffc95ef7dfd57179d959d94d6a2fb603e8/me2.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJuMDFiaTczZW94MzF1dWticGphZTQ5cHc3bDR3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709574ffc95ef7dfd57179d959d94d6a2fb603e8/me2.jpeg
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"resume"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJuMDFiaTczZW94MzF1dWticGphZTQ5cHc3bDR3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709574ffc95ef7dfd57179d959d94d6a2fb603e8/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTMsInB1ciI6ImJsb2JfaWQifX0=--bca5a915688b80aea1a64d7739754ac7393db012/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTIsInB1ciI6ImJsb2JfaWQifX0=--1ed263c00c0be4938a4f88c6a0472633d799a4cf", "filename"=>"me2"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: 0pg7k99sebm32jvnghudauqnmhq5 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwcGc3azk5c2VibTMyanZuZ2h1ZGF1cW5taHE1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--54d7d61a45759de5516f983aabca3e9c136e475a/me2.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwcGc3azk5c2VibTMyanZuZ2h1ZGF1cW5taHE1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--54d7d61a45759de5516f983aabca3e9c136e475a/me2.jpeg
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwcGc3azk5c2VibTMyanZuZ2h1ZGF1cW5taHE1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--54d7d61a45759de5516f983aabca3e9c136e475a/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTMsInB1ciI6ImJsb2JfaWQifX0=--bca5a915688b80aea1a64d7739754ac7393db012", "filename"=>"venus-photo"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 7nos450jm0peo4qh44hvp6e5p7tq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bm9zNDUwam0wcGVvNHFoNDRodnA2ZTVwN3RxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4xODdaIiwicHVyIjoiYmxvYl9rZXkifX0=--8a3e45544deabfef37c597a7a1e9eaed751c29ff/venus-photo.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bm9zNDUwam0wcGVvNHFoNDRodnA2ZTVwN3RxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4xODdaIiwicHVyIjoiYmxvYl9rZXkifX0=--8a3e45544deabfef37c597a7a1e9eaed751c29ff/venus-photo.jpeg
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bm9zNDUwam0wcGVvNHFoNDRodnA2ZTVwN3RxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4xODdaIiwicHVyIjoiYmxvYl9rZXkifX0=--8a3e45544deabfef37c597a7a1e9eaed751c29ff/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--0c00042fe1c9de2cd28dfbed9947734dec47ed1e/logo.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--0c00042fe1c9de2cd28dfbed9947734dec47ed1e", "filename"=>"logo"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 2n8rav1fzkrqf9sib3eiizm0ee3n (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIybjhyYXYxZnprcnFmOXNpYjNlaWl6bTBlZTNuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMzkwWiIsInB1ciI6ImJsb2Jfa2V5In19--4a6558f7b7fbdf925f22c4b583a2efb6e813e0f6/logo.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIybjhyYXYxZnprcnFmOXNpYjNlaWl6bTBlZTNuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMzkwWiIsInB1ciI6ImJsb2Jfa2V5In19--4a6558f7b7fbdf925f22c4b583a2efb6e813e0f6/logo.jpeg
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIybjhyYXYxZnprcnFmOXNpYjNlaWl6bTBlZTNuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMzkwWiIsInB1ciI6ImJsb2Jfa2V5In19--4a6558f7b7fbdf925f22c4b583a2efb6e813e0f6/logo.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NSwicHVyIjoiYmxvYl9pZCJ9fQ==--9e846e1458c8fb107290e1cf8b99732b87574951/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NywicHVyIjoiYmxvYl9pZCJ9fQ==--ea799c442d32e022fcf03bf688f651a4103fcc1a/pexels-daisy-anderson-5584279.jpg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NSwicHVyIjoiYmxvYl9pZCJ9fQ==--9e846e1458c8fb107290e1cf8b99732b87574951", "filename"=>"me2"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: w8678nyqq24ietja7r06an4pac2m (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3ODY3OG55cXEyNGlldGphN3IwNmFuNHBhYzJtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjQxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b5a52538cb1e7f9617cffee445293dbb0fcda8fb/me2.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3ODY3OG55cXEyNGlldGphN3IwNmFuNHBhYzJtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjQxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b5a52538cb1e7f9617cffee445293dbb0fcda8fb/me2.jpeg
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3ODY3OG55cXEyNGlldGphN3IwNmFuNHBhYzJtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjQxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b5a52538cb1e7f9617cffee445293dbb0fcda8fb/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NywicHVyIjoiYmxvYl9pZCJ9fQ==--ea799c442d32e022fcf03bf688f651a4103fcc1a", "filename"=>"pexels-daisy-anderson-5584279"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: esk9b5ieoi2rzf8f1uaijqxqtiot (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlc2s5YjVpZW9pMnJ6ZjhmMXVhaWpxeHF0aW90IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuNDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--1e2c0452761458031254adf85aa0de12c3d4a17b/pexels-daisy-anderson-5584279.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlc2s5YjVpZW9pMnJ6ZjhmMXVhaWpxeHF0aW90IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuNDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--1e2c0452761458031254adf85aa0de12c3d4a17b/pexels-daisy-anderson-5584279.jpg
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlc2s5YjVpZW9pMnJ6ZjhmMXVhaWpxeHF0aW90IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuNDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--1e2c0452761458031254adf85aa0de12c3d4a17b/pexels-daisy-anderson-5584279.jpg" for 127.0.0.1 at 2025-03-28 14:33:45 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-daisy-anderson-5584279"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/possts" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `map'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 3], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 4], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 9], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (4.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+No serializer found for resource: {"id"=>1, "model"=>"2009", "year_of_manufacture"=>2012, "condition"=>"good", "color_in"=>"blue", "color_out"=>"black", "registered"=>"no", "mileage"=>1200, "transmission"=>"fffff", "body"=>"hhhhhhh", "fuel"=>"diesel", "engine_size"=>34, "horse_power"=>560, "description"=>"dfcghvbh", "price"=>"1000000.0", "location"=>"nairobi", "contact"=>"0792828282", "name"=>"bow", "created_at"=>"2025-03-26T11:49:04.865Z", "updated_at"=>"2025-03-26T11:49:05.094Z", "title"=>"bmw", :images=>["http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--739ce8c85a860478d2d6b75134c1c1a9c2dbc379/venus-photo.jpeg", "http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--d7a3abeb8963e5dda98100310da0b66ecdfdc5af/venus-photo.jpeg"]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.68ms)
+Completed 200 OK in 117ms (Views: 2.3ms | ActiveRecord: 11.3ms (25 queries, 0 cached) | GC: 2.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJma214ZzcxMXFrOWlzbHN4em82YzI2eDZwbTF3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NC44ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--0d305e76e8f32e8f1db03644f23264533a965f92/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIybjhyYXYxZnprcnFmOXNpYjNlaWl6bTBlZTNuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMzkwWiIsInB1ciI6ImJsb2Jfa2V5In19--4a6558f7b7fbdf925f22c4b583a2efb6e813e0f6/logo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJud2pqdWZlODR2YzNscG02cGtzaGI1NG9tYTg2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4wNjFaIiwicHVyIjoiYmxvYl9rZXkifX0=--c717ef7a2a8aef5db929c80e07ee2672b470ae24/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsaWJtbXNwbWMxeWlxbWhwc2RuaXl1N2h4aW4wIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--3344223a038f9d0ed595aae1b5d0350ff7fe524f/pexels-daisy-anderson-5584279.jpg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlc2s5YjVpZW9pMnJ6ZjhmMXVhaWpxeHF0aW90IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuNDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--1e2c0452761458031254adf85aa0de12c3d4a17b/pexels-daisy-anderson-5584279.jpg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI5MG4wZ3d1eHBiaTNmMmI5Mjhmem9zd3Z2OXM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDQuOTA1WiIsInB1ciI6ImJsb2Jfa2V5In19--f6235a8daca20feb09e1131255a1b9bcfba3583f/logo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-daisy-anderson-5584279"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-daisy-anderson-5584279"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsdXp1Z2hscW9wYjJvd3JxNDl4d3c3anVpN28zIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjA4OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e217d8481caf396ef14d300e4f64dc6498e274c7/resume.jpeg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ5dGUyZWJpeTdwbmI2ZDk1eWx4cjhnaTVpbGQwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjEwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b7793f764a6d8c0d293df122625b0a64f70d5c2b/resume.jpeg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJuMDFiaTczZW94MzF1dWticGphZTQ5cHc3bDR3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709574ffc95ef7dfd57179d959d94d6a2fb603e8/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"resume"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"resume"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwcGc3azk5c2VibTMyanZuZ2h1ZGF1cW5taHE1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--54d7d61a45759de5516f983aabca3e9c136e475a/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bm9zNDUwam0wcGVvNHFoNDRodnA2ZTVwN3RxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4xODdaIiwicHVyIjoiYmxvYl9rZXkifX0=--8a3e45544deabfef37c597a7a1e9eaed751c29ff/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3ODY3OG55cXEyNGlldGphN3IwNmFuNHBhYzJtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjQxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b5a52538cb1e7f9617cffee445293dbb0fcda8fb/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIycnRsaGEwOXVha2Ztc3gwZHMyNzNqOGtnMnZwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjAyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ff646979888fa29461cf70ed8ac0e77124b0db9c/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:35:03 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-03-28 14:35:50 +0300
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"bima", "model"=>"2009", "year_of_manufacture"=>"2012", "condition"=>"good", "color_in"=>"black", "color_out"=>"black", "registered"=>"ye", "mileage"=>"1200", "transmission"=>"fffff", "body"=>"hhhhhhh", "fuel"=>"diesel", "engine_size"=>"34", "horse_power"=>"560", "description"=>"fgchbj", "price"=>"1000000", "location"=>"nairobi", "contact"=>"0791023312", "name"=>"ben", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff46999cf90 @tempfile=#<Tempfile:/tmp/RackMultipart20250328-10116-u2tcxx.jpeg>, @content_type="image/jpeg", @original_filename="venus-photo.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"venus-photo.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://127.0.0.1:3000)
+Received parameters: #<ActionController::Parameters {"post"=>{"title"=>"bima", "model"=>"2009", "year_of_manufacture"=>"2012", "condition"=>"good", "color_in"=>"black", "color_out"=>"black", "registered"=>"ye", "mileage"=>"1200", "transmission"=>"fffff", "body"=>"hhhhhhh", "fuel"=>"diesel", "engine_size"=>"34", "horse_power"=>"560", "description"=>"fgchbj", "price"=>"1000000", "location"=>"nairobi", "contact"=>"0791023312", "name"=>"ben", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff46999cf90 @tempfile=#<Tempfile:/tmp/RackMultipart20250328-10116-u2tcxx.jpeg>, @content_type="image/jpeg", @original_filename="venus-photo.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"venus-photo.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "controller"=>"posts", "action"=>"create"} permitted: false>
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:43:in `create'
+  [1m[36mPost Create (2.7ms)[0m  [1m[32mINSERT INTO "posts" ("model", "year_of_manufacture", "condition", "color_in", "color_out", "registered", "mileage", "transmission", "body", "fuel", "engine_size", "horse_power", "description", "price", "location", "contact", "name", "created_at", "updated_at", "title") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"[0m  [["model", "2009"], ["year_of_manufacture", 2012], ["condition", "good"], ["color_in", "black"], ["color_out", "black"], ["registered", "ye"], ["mileage", 1200], ["transmission", "fffff"], ["body", "hhhhhhh"], ["fuel", "diesel"], ["engine_size", 34], ["horse_power", 560], ["description", "fgchbj"], ["price", "1000000.0"], ["location", "nairobi"], ["contact", "0791023312"], ["name", "ben"], ["created_at", "2025-03-28 11:35:50.082361"], ["updated_at", "2025-03-28 11:35:50.082361"], ["title", "bima"]]
+  ↳ app/controllers/posts_controller.rb:43:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 12], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:43:in `create'
+  [1m[36mActiveStorage::Blob Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "qlxgjjrls2wyu5wcupxgdojy2o9s"], ["filename", "venus-photo.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 9177], ["checksum", "fnV12p5CgUB13VvzDuA0eQ=="], ["created_at", "2025-03-28 11:35:50.096934"]]
+  ↳ app/controllers/posts_controller.rb:43:in `create'
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "images"], ["record_type", "Post"], ["record_id", 12], ["blob_id", 14], ["created_at", "2025-03-28 11:35:50.103603"]]
+  ↳ app/controllers/posts_controller.rb:43:in `create'
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "drnxgop8rb0fh1wr2n63vfern24b"], ["filename", "venus-photo.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 9177], ["checksum", "fnV12p5CgUB13VvzDuA0eQ=="], ["created_at", "2025-03-28 11:35:50.109584"]]
+  ↳ app/controllers/posts_controller.rb:43:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "images"], ["record_type", "Post"], ["record_id", 12], ["blob_id", 15], ["created_at", "2025-03-28 11:35:50.114175"]]
+  ↳ app/controllers/posts_controller.rb:43:in `create'
+  [1m[36mPost Update (0.5ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2025-03-28 11:35:50.120340"], ["id", 12]]
+  ↳ app/controllers/posts_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:43:in `create'
+[36m  Disk Storage (2.0ms) [0m[32mUploaded file to key: qlxgjjrls2wyu5wcupxgdojy2o9s (checksum: fnV12p5CgUB13VvzDuA0eQ==)[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: drnxgop8rb0fh1wr2n63vfern24b (checksum: fnV12p5CgUB13VvzDuA0eQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d0ffbae4-7069-46af-8523-5f9e07b3147f) to Async(default) with arguments: #<GlobalID:0x00007ff4698d56e8 @uri=#<URI::GID gid://api/ActiveStorage::Blob/14>>
+[ActiveJob] ↳ app/controllers/posts_controller.rb:43:in `create'
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 27c76805-d837-4e62-8e06-cb27146521a5) to Async(default) with arguments: #<GlobalID:0x00007ff4698ae778 @uri=#<URI::GID gid://api/ActiveStorage::Blob/15>>
+[ActiveJob] ↳ app/controllers/posts_controller.rb:43:in `create'
+Post created successfully with ID: 12
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 201 Created in 88ms (Views: 0.6ms | ActiveRecord: 8.0ms (7 queries, 0 cached) | GC: 2.3ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ffbae4-7069-46af-8523-5f9e07b3147f]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ffbae4-7069-46af-8523-5f9e07b3147f] Performing ActiveStorage::AnalyzeJob (Job ID: d0ffbae4-7069-46af-8523-5f9e07b3147f) from Async(default) enqueued at 2025-03-28T11:35:50.147095440Z with arguments: #<GlobalID:0x00007ff469873c90 @uri=#<URI::GID gid://api/ActiveStorage::Blob/14>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ffbae4-7069-46af-8523-5f9e07b3147f] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ffbae4-7069-46af-8523-5f9e07b3147f]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ffbae4-7069-46af-8523-5f9e07b3147f]   [1m[36mActiveStorage::Blob Update (2.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 14]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ffbae4-7069-46af-8523-5f9e07b3147f]   [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1[0m  [["blob_id", 14]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27c76805-d837-4e62-8e06-cb27146521a5]   [1m[36mActiveStorage::Blob Load (7.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27c76805-d837-4e62-8e06-cb27146521a5] Performing ActiveStorage::AnalyzeJob (Job ID: 27c76805-d837-4e62-8e06-cb27146521a5) from Async(default) enqueued at 2025-03-28T11:35:50.152769256Z with arguments: #<GlobalID:0x00007ff469819a10 @uri=#<URI::GID gid://api/ActiveStorage::Blob/15>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ffbae4-7069-46af-8523-5f9e07b3147f]   [1m[36mPost Load (4.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 12]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27c76805-d837-4e62-8e06-cb27146521a5] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ffbae4-7069-46af-8523-5f9e07b3147f]   [1m[36mPost Update (31.2ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2025-03-28 11:35:50.235823"], ["id", 12]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27c76805-d837-4e62-8e06-cb27146521a5]   [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27c76805-d837-4e62-8e06-cb27146521a5]   [1m[36mActiveStorage::Blob Update (7.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 15]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27c76805-d837-4e62-8e06-cb27146521a5]   [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1[0m  [["blob_id", 15]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ffbae4-7069-46af-8523-5f9e07b3147f]   [1m[36mTRANSACTION (18.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0ffbae4-7069-46af-8523-5f9e07b3147f] Performed ActiveStorage::AnalyzeJob (Job ID: d0ffbae4-7069-46af-8523-5f9e07b3147f) from Async(default) in 122.81ms
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27c76805-d837-4e62-8e06-cb27146521a5]   [1m[36mPost Load (6.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 12]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27c76805-d837-4e62-8e06-cb27146521a5]   [1m[36mPost Update (1.3ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2025-03-28 11:35:50.312657"], ["id", 12]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27c76805-d837-4e62-8e06-cb27146521a5]   [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [27c76805-d837-4e62-8e06-cb27146521a5] Performed ActiveStorage::AnalyzeJob (Job ID: 27c76805-d837-4e62-8e06-cb27146521a5) from Async(default) in 132.26ms
+Started GET "/posts" for 127.0.0.1 at 2025-03-28 14:35:52 +0300
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `map'
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 3], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 4], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 9], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 12], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+No serializer found for resource: {"id"=>1, "model"=>"2009", "year_of_manufacture"=>2012, "condition"=>"good", "color_in"=>"blue", "color_out"=>"black", "registered"=>"no", "mileage"=>1200, "transmission"=>"fffff", "body"=>"hhhhhhh", "fuel"=>"diesel", "engine_size"=>34, "horse_power"=>560, "description"=>"dfcghvbh", "price"=>"1000000.0", "location"=>"nairobi", "contact"=>"0792828282", "name"=>"bow", "created_at"=>"2025-03-26T11:49:04.865Z", "updated_at"=>"2025-03-26T11:49:05.094Z", "title"=>"bmw", :images=>["http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--739ce8c85a860478d2d6b75134c1c1a9c2dbc379/venus-photo.jpeg", "http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--d7a3abeb8963e5dda98100310da0b66ecdfdc5af/venus-photo.jpeg"]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.09ms)
+Completed 200 OK in 185ms (Views: 2.5ms | ActiveRecord: 14.0ms (28 queries, 0 cached) | GC: 8.8ms)
+
+
+Started GET "/possts" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `map'
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 3], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 4], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 9], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 12], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+No serializer found for resource: {"id"=>1, "model"=>"2009", "year_of_manufacture"=>2012, "condition"=>"good", "color_in"=>"blue", "color_out"=>"black", "registered"=>"no", "mileage"=>1200, "transmission"=>"fffff", "body"=>"hhhhhhh", "fuel"=>"diesel", "engine_size"=>34, "horse_power"=>560, "description"=>"dfcghvbh", "price"=>"1000000.0", "location"=>"nairobi", "contact"=>"0792828282", "name"=>"bow", "created_at"=>"2025-03-26T11:49:04.865Z", "updated_at"=>"2025-03-26T11:49:05.094Z", "title"=>"bmw", :images=>["http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--739ce8c85a860478d2d6b75134c1c1a9c2dbc379/venus-photo.jpeg", "http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--d7a3abeb8963e5dda98100310da0b66ecdfdc5af/venus-photo.jpeg"]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.78ms)
+Completed 200 OK in 157ms (Views: 1.7ms | ActiveRecord: 12.7ms (28 queries, 0 cached) | GC: 6.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJma214ZzcxMXFrOWlzbHN4em82YzI2eDZwbTF3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NC44ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--0d305e76e8f32e8f1db03644f23264533a965f92/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI5MG4wZ3d1eHBiaTNmMmI5Mjhmem9zd3Z2OXM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDQuOTA1WiIsInB1ciI6ImJsb2Jfa2V5In19--f6235a8daca20feb09e1131255a1b9bcfba3583f/logo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlc2s5YjVpZW9pMnJ6ZjhmMXVhaWpxeHF0aW90IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuNDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--1e2c0452761458031254adf85aa0de12c3d4a17b/pexels-daisy-anderson-5584279.jpg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsaWJtbXNwbWMxeWlxbWhwc2RuaXl1N2h4aW4wIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--3344223a038f9d0ed595aae1b5d0350ff7fe524f/pexels-daisy-anderson-5584279.jpg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-daisy-anderson-5584279"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-daisy-anderson-5584279"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsdXp1Z2hscW9wYjJvd3JxNDl4d3c3anVpN28zIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjA4OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e217d8481caf396ef14d300e4f64dc6498e274c7/resume.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ5dGUyZWJpeTdwbmI2ZDk1eWx4cjhnaTVpbGQwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjEwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b7793f764a6d8c0d293df122625b0a64f70d5c2b/resume.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"resume"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"resume"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJuMDFiaTczZW94MzF1dWticGphZTQ5cHc3bDR3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709574ffc95ef7dfd57179d959d94d6a2fb603e8/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwcGc3azk5c2VibTMyanZuZ2h1ZGF1cW5taHE1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--54d7d61a45759de5516f983aabca3e9c136e475a/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJud2pqdWZlODR2YzNscG02cGtzaGI1NG9tYTg2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4wNjFaIiwicHVyIjoiYmxvYl9rZXkifX0=--c717ef7a2a8aef5db929c80e07ee2672b470ae24/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTQsInB1ciI6ImJsb2JfaWQifX0=--ed7b876871461b7239725d4b0cf8f3794cf77f38/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTUsInB1ciI6ImJsb2JfaWQifX0=--bd9c5fd2c3def1ae9c7d6f888182e5c4d6a167eb/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bm9zNDUwam0wcGVvNHFoNDRodnA2ZTVwN3RxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4xODdaIiwicHVyIjoiYmxvYl9rZXkifX0=--8a3e45544deabfef37c597a7a1e9eaed751c29ff/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTUsInB1ciI6ImJsb2JfaWQifX0=--bd9c5fd2c3def1ae9c7d6f888182e5c4d6a167eb", "filename"=>"venus-photo"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveStorage::Blob Load (5.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: drnxgop8rb0fh1wr2n63vfern24b (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkcm54Z29wOHJiMGZoMXdyMm42M3ZmZXJuMjRiIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTo0MDo1NC44NThaIiwicHVyIjoiYmxvYl9rZXkifX0=--7d21fa29a3f2cdc5a355abd74a7f4b58663dc6d3/venus-photo.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkcm54Z29wOHJiMGZoMXdyMm42M3ZmZXJuMjRiIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTo0MDo1NC44NThaIiwicHVyIjoiYmxvYl9rZXkifX0=--7d21fa29a3f2cdc5a355abd74a7f4b58663dc6d3/venus-photo.jpeg
+Completed 302 Found in 25ms (ActiveRecord: 5.9ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkcm54Z29wOHJiMGZoMXdyMm42M3ZmZXJuMjRiIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTo0MDo1NC44NThaIiwicHVyIjoiYmxvYl9rZXkifX0=--7d21fa29a3f2cdc5a355abd74a7f4b58663dc6d3/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTQsInB1ciI6ImJsb2JfaWQifX0=--ed7b876871461b7239725d4b0cf8f3794cf77f38", "filename"=>"venus-photo"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+[36m  Disk Storage (1.5ms) [0m[34mGenerated URL for file at key: qlxgjjrls2wyu5wcupxgdojy2o9s (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxbHhnampybHMyd3l1NXdjdXB4Z2RvankybzlzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTo0MDo1NC44ODNaIiwicHVyIjoiYmxvYl9rZXkifX0=--b081764375f5a591ea3fbf6d326fab6deb26cbb8/venus-photo.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxbHhnampybHMyd3l1NXdjdXB4Z2RvankybzlzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTo0MDo1NC44ODNaIiwicHVyIjoiYmxvYl9rZXkifX0=--b081764375f5a591ea3fbf6d326fab6deb26cbb8/venus-photo.jpeg
+Completed 302 Found in 11ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxbHhnampybHMyd3l1NXdjdXB4Z2RvankybzlzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTo0MDo1NC44ODNaIiwicHVyIjoiYmxvYl9rZXkifX0=--b081764375f5a591ea3fbf6d326fab6deb26cbb8/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIybjhyYXYxZnprcnFmOXNpYjNlaWl6bTBlZTNuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMzkwWiIsInB1ciI6ImJsb2Jfa2V5In19--4a6558f7b7fbdf925f22c4b583a2efb6e813e0f6/logo.jpeg" for 127.0.0.1 at 2025-03-28 14:35:55 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3ODY3OG55cXEyNGlldGphN3IwNmFuNHBhYzJtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjQxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b5a52538cb1e7f9617cffee445293dbb0fcda8fb/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:35:55 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIycnRsaGEwOXVha2Ztc3gwZHMyNzNqOGtnMnZwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjAyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ff646979888fa29461cf70ed8ac0e77124b0db9c/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:35:55 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-03-28 14:37:49 +0300
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"title"=>"qqq", "model"=>"bhkn", "year_of_manufacture"=>"2012", "condition"=>"mn", "color_in"=>"nmm", "color_out"=>"black", "registered"=>"ye", "mileage"=>"1200", "transmission"=>"fffff", "body"=>"lean", "fuel"=>"diesel", "engine_size"=>"34", "horse_power"=>"560", "description"=>"xdtfgvybuhjni", "price"=>"1000000", "location"=>"nairobi", "contact"=>"0792828282", "name"=>"roy", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff469941398 @tempfile=#<Tempfile:/tmp/RackMultipart20250328-10116-ktgpfe.jpeg>, @content_type="image/jpeg", @original_filename="lapi.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"lapi.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://127.0.0.1:3000)
+Received parameters: #<ActionController::Parameters {"post"=>{"title"=>"qqq", "model"=>"bhkn", "year_of_manufacture"=>"2012", "condition"=>"mn", "color_in"=>"nmm", "color_out"=>"black", "registered"=>"ye", "mileage"=>"1200", "transmission"=>"fffff", "body"=>"lean", "fuel"=>"diesel", "engine_size"=>"34", "horse_power"=>"560", "description"=>"xdtfgvybuhjni", "price"=>"1000000", "location"=>"nairobi", "contact"=>"0792828282", "name"=>"roy", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff469941398 @tempfile=#<Tempfile:/tmp/RackMultipart20250328-10116-ktgpfe.jpeg>, @content_type="image/jpeg", @original_filename="lapi.jpeg", @headers="Content-Disposition: form-data; name=\"post[images][]\"; filename=\"lapi.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "controller"=>"posts", "action"=>"create"} permitted: false>
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:37:in `create'
+  [1m[36mPost Create (1.8ms)[0m  [1m[32mINSERT INTO "posts" ("model", "year_of_manufacture", "condition", "color_in", "color_out", "registered", "mileage", "transmission", "body", "fuel", "engine_size", "horse_power", "description", "price", "location", "contact", "name", "created_at", "updated_at", "title") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"[0m  [["model", "bhkn"], ["year_of_manufacture", 2012], ["condition", "mn"], ["color_in", "nmm"], ["color_out", "black"], ["registered", "ye"], ["mileage", 1200], ["transmission", "fffff"], ["body", "lean"], ["fuel", "diesel"], ["engine_size", 34], ["horse_power", 560], ["description", "xdtfgvybuhjni"], ["price", "1000000.0"], ["location", "nairobi"], ["contact", "0792828282"], ["name", "roy"], ["created_at", "2025-03-28 11:37:49.921726"], ["updated_at", "2025-03-28 11:37:49.921726"], ["title", "qqq"]]
+  ↳ app/controllers/posts_controller.rb:37:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 13], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:37:in `create'
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "w83o6g4em67ahkw07k91v8db2lyo"], ["filename", "lapi.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 122801], ["checksum", "BEX5q4tACEjE0JauVZPYhA=="], ["created_at", "2025-03-28 11:37:49.930034"]]
+  ↳ app/controllers/posts_controller.rb:37:in `create'
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "images"], ["record_type", "Post"], ["record_id", 13], ["blob_id", 16], ["created_at", "2025-03-28 11:37:49.934427"]]
+  ↳ app/controllers/posts_controller.rb:37:in `create'
+  [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2025-03-28 11:37:49.940522"], ["id", 13]]
+  ↳ app/controllers/posts_controller.rb:37:in `create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:37:in `create'
+[36m  Disk Storage (2.1ms) [0m[32mUploaded file to key: w83o6g4em67ahkw07k91v8db2lyo (checksum: BEX5q4tACEjE0JauVZPYhA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 0488dab1-7788-4c75-a405-64e9ff1bd63e) to Async(default) with arguments: #<GlobalID:0x00007ff47a165758 @uri=#<URI::GID gid://api/ActiveStorage::Blob/16>>
+[ActiveJob] ↳ app/controllers/posts_controller.rb:37:in `create'
+Post created successfully with ID: 13
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 201 Created in 173ms (Views: 1.7ms | ActiveRecord: 22.1ms (5 queries, 0 cached) | GC: 87.1ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0488dab1-7788-4c75-a405-64e9ff1bd63e]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0488dab1-7788-4c75-a405-64e9ff1bd63e] Performing ActiveStorage::AnalyzeJob (Job ID: 0488dab1-7788-4c75-a405-64e9ff1bd63e) from Async(default) enqueued at 2025-03-28T11:37:49.953243594Z with arguments: #<GlobalID:0x00007ff46b0ffe80 @uri=#<URI::GID gid://api/ActiveStorage::Blob/16>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0488dab1-7788-4c75-a405-64e9ff1bd63e] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0488dab1-7788-4c75-a405-64e9ff1bd63e]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0488dab1-7788-4c75-a405-64e9ff1bd63e]   [1m[36mActiveStorage::Blob Update (4.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 16]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0488dab1-7788-4c75-a405-64e9ff1bd63e]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1[0m  [["blob_id", 16]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0488dab1-7788-4c75-a405-64e9ff1bd63e]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 13]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0488dab1-7788-4c75-a405-64e9ff1bd63e]   [1m[36mPost Update (0.6ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2025-03-28 11:37:50.239632"], ["id", 13]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0488dab1-7788-4c75-a405-64e9ff1bd63e]   [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0488dab1-7788-4c75-a405-64e9ff1bd63e] Performed ActiveStorage::AnalyzeJob (Job ID: 0488dab1-7788-4c75-a405-64e9ff1bd63e) from Async(default) in 103.63ms
+Started GET "/posts" for 127.0.0.1 at 2025-03-28 14:37:51 +0300
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `map'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (2.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 3], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 4], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 9], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 12], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 13], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+No serializer found for resource: {"id"=>1, "model"=>"2009", "year_of_manufacture"=>2012, "condition"=>"good", "color_in"=>"blue", "color_out"=>"black", "registered"=>"no", "mileage"=>1200, "transmission"=>"fffff", "body"=>"hhhhhhh", "fuel"=>"diesel", "engine_size"=>34, "horse_power"=>560, "description"=>"dfcghvbh", "price"=>"1000000.0", "location"=>"nairobi", "contact"=>"0792828282", "name"=>"bow", "created_at"=>"2025-03-26T11:49:04.865Z", "updated_at"=>"2025-03-26T11:49:05.094Z", "title"=>"bmw", :images=>["http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--739ce8c85a860478d2d6b75134c1c1a9c2dbc379/venus-photo.jpeg", "http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--d7a3abeb8963e5dda98100310da0b66ecdfdc5af/venus-photo.jpeg"]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.55ms)
+Completed 200 OK in 234ms (Views: 5.6ms | ActiveRecord: 17.3ms (30 queries, 0 cached) | GC: 8.6ms)
+
+
+Started GET "/possts" for 127.0.0.1 at 2025-03-28 14:37:53 +0300
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `map'
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 3], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 4], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 8], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 9], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 12], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 13], ["record_type", "Post"], ["name", "images"]]
+  ↳ app/controllers/posts_controller.rb:10:in `block in index'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `block (2 levels) in index'
+No serializer found for resource: {"id"=>1, "model"=>"2009", "year_of_manufacture"=>2012, "condition"=>"good", "color_in"=>"blue", "color_out"=>"black", "registered"=>"no", "mileage"=>1200, "transmission"=>"fffff", "body"=>"hhhhhhh", "fuel"=>"diesel", "engine_size"=>34, "horse_power"=>560, "description"=>"dfcghvbh", "price"=>"1000000.0", "location"=>"nairobi", "contact"=>"0792828282", "name"=>"bow", "created_at"=>"2025-03-26T11:49:04.865Z", "updated_at"=>"2025-03-26T11:49:05.094Z", "title"=>"bmw", :images=>["http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--739ce8c85a860478d2d6b75134c1c1a9c2dbc379/venus-photo.jpeg", "http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--d7a3abeb8963e5dda98100310da0b66ecdfdc5af/venus-photo.jpeg"]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.64ms)
+Completed 200 OK in 186ms (Views: 2.5ms | ActiveRecord: 12.1ms (30 queries, 0 cached) | GC: 6.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJma214ZzcxMXFrOWlzbHN4em82YzI2eDZwbTF3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NC44ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--0d305e76e8f32e8f1db03644f23264533a965f92/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:37:53 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3ODY3OG55cXEyNGlldGphN3IwNmFuNHBhYzJtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjQxN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b5a52538cb1e7f9617cffee445293dbb0fcda8fb/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:37:53 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlc2s5YjVpZW9pMnJ6ZjhmMXVhaWpxeHF0aW90IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuNDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--1e2c0452761458031254adf85aa0de12c3d4a17b/pexels-daisy-anderson-5584279.jpg" for 127.0.0.1 at 2025-03-28 14:37:53 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsaWJtbXNwbWMxeWlxbWhwc2RuaXl1N2h4aW4wIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGV4ZWxzLWRhaXN5LWFuZGVyc29uLTU1ODQyNzkuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMDI2WiIsInB1ciI6ImJsb2Jfa2V5In19--3344223a038f9d0ed595aae1b5d0350ff7fe524f/pexels-daisy-anderson-5584279.jpg" for 127.0.0.1 at 2025-03-28 14:37:53 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-daisy-anderson-5584279"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-daisy-anderson-5584279"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsdXp1Z2hscW9wYjJvd3JxNDl4d3c3anVpN28zIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjA4OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e217d8481caf396ef14d300e4f64dc6498e274c7/resume.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ5dGUyZWJpeTdwbmI2ZDk1eWx4cjhnaTVpbGQwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicmVzdW1lLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydyZXN1bWUuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjEwOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b7793f764a6d8c0d293df122625b0a64f70d5c2b/resume.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"resume"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"resume"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJuMDFiaTczZW94MzF1dWticGphZTQ5cHc3bDR3IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709574ffc95ef7dfd57179d959d94d6a2fb603e8/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwcGc3azk5c2VibTMyanZuZ2h1ZGF1cW5taHE1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjE2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--54d7d61a45759de5516f983aabca3e9c136e475a/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI3bm9zNDUwam0wcGVvNHFoNDRodnA2ZTVwN3RxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4xODdaIiwicHVyIjoiYmxvYl9rZXkifX0=--8a3e45544deabfef37c597a7a1e9eaed751c29ff/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJud2pqdWZlODR2YzNscG02cGtzaGI1NG9tYTg2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTozODo0NS4wNjFaIiwicHVyIjoiYmxvYl9rZXkifX0=--c717ef7a2a8aef5db929c80e07ee2672b470ae24/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJxbHhnampybHMyd3l1NXdjdXB4Z2RvankybzlzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTo0MDo1NC44ODNaIiwicHVyIjoiYmxvYl9rZXkifX0=--b081764375f5a591ea3fbf6d326fab6deb26cbb8/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkcm54Z29wOHJiMGZoMXdyMm42M3ZmZXJuMjRiIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidmVudXMtcGhvdG8uanBlZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3ZlbnVzLXBob3RvLmpwZWciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMy0yOFQxMTo0MDo1NC44NThaIiwicHVyIjoiYmxvYl9rZXkifX0=--7d21fa29a3f2cdc5a355abd74a7f4b58663dc6d3/venus-photo.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--379a9abdc8e85be4e0235326e7e9797c06c4d5e4/lapi.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"venus-photo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--379a9abdc8e85be4e0235326e7e9797c06c4d5e4", "filename"=>"lapi"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[36m  Disk Storage (18.0ms) [0m[34mGenerated URL for file at key: w83o6g4em67ahkw07k91v8db2lyo (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3ODNvNmc0ZW02N2Foa3cwN2s5MXY4ZGIybHlvIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaS5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbGFwaS5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6NDI6NTQuMTQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--a9b38fe3233b8adc2a4f37a8bcf8e3448a7ad437/lapi.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3ODNvNmc0ZW02N2Foa3cwN2s5MXY4ZGIybHlvIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaS5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbGFwaS5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6NDI6NTQuMTQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--a9b38fe3233b8adc2a4f37a8bcf8e3448a7ad437/lapi.jpeg
+Completed 302 Found in 25ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 16.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3ODNvNmc0ZW02N2Foa3cwN2s5MXY4ZGIybHlvIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibGFwaS5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbGFwaS5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6NDI6NTQuMTQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--a9b38fe3233b8adc2a4f37a8bcf8e3448a7ad437/lapi.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"lapi"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI5MG4wZ3d1eHBiaTNmMmI5Mjhmem9zd3Z2OXM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDQuOTA1WiIsInB1ciI6ImJsb2Jfa2V5In19--f6235a8daca20feb09e1131255a1b9bcfba3583f/logo.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIybjhyYXYxZnprcnFmOXNpYjNlaWl6bTBlZTNuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibG9nby5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnbG9nby5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDMtMjhUMTE6Mzg6NDUuMzkwWiIsInB1ciI6ImJsb2Jfa2V5In19--4a6558f7b7fbdf925f22c4b583a2efb6e813e0f6/logo.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIycnRsaGEwOXVha2Ztc3gwZHMyNzNqOGtnMnZwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibWUyLmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydtZTIuanBlZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTAzLTI4VDExOjM4OjQ1LjAyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ff646979888fa29461cf70ed8ac0e77124b0db9c/me2.jpeg" for 127.0.0.1 at 2025-03-28 14:37:54 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"me2"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (96.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_development"[0m
+  [1m[35m (52.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api_test"[0m
+  [1m[35m (203.6ms)[0m  [1m[35mCREATE DATABASE "api_development" ENCODING = 'unicode'[0m
+  [1m[35m (139.2ms)[0m  [1m[35mCREATE DATABASE "api_test" ENCODING = 'unicode'[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-03-28 11:39:27.161295', '2025-03-28 11:39:27.161301') RETURNING "key"[0m
+Migrating to CreateUsers (20250121133225)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250121133225') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveStorageTables (20250122164648)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250122164648') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePosts (20250313113151)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "model" character varying NOT NULL, "year_of_manufacture" integer NOT NULL, "condition" character varying NOT NULL, "color_in" character varying NOT NULL, "color_out" character varying NOT NULL, "registered" character varying NOT NULL, "mileage" integer NOT NULL, "transmission" character varying NOT NULL, "body" character varying NOT NULL, "fuel" character varying NOT NULL, "engine_size" integer NOT NULL, "horse_power" integer NOT NULL, "description" text NOT NULL, "price" decimal(10,2) NOT NULL, "location" character varying NOT NULL, "contact" character varying NOT NULL, "name" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250313113151') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTitleToPosts (20250318095007)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "posts" ADD "title" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250318095007') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/possts" for 127.0.0.1 at 2025-03-28 14:39:34 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (4.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (14.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 60ms (Views: 4.6ms | ActiveRecord: 21.4ms (1 query, 0 cached) | GC: 2.4ms)
+
+
+Started GET "/possts" for 127.0.0.1 at 2025-03-28 14:44:58 +0300
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/possts" for 127.0.0.1 at 2025-03-28 14:46:02 +0300
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/possts" for 127.0.0.1 at 2025-03-28 14:46:27 +0300
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.7ms)
+
+

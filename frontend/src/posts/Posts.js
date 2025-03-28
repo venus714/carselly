@@ -27,7 +27,6 @@ function Posts() {
 
   const [images, setImages] = useState([]);
   const imagesRef = useRef();
-  const postToGet = useRef(1);
 
   const handleChange = (e) => {
     setPostData({ ...postData, [e.target.name]: e.target.value });
@@ -54,9 +53,9 @@ function Posts() {
     });
 
     // Append images
-    for (let i = 0; i < imagesRef.current.files.length; i++) {
-      formData.append("post[images][]", imagesRef.current.files[i]);
-    }
+    Array.from(imagesRef.current.files).forEach((file) => {
+      formData.append("post[images][]", file);
+    });
 
     try {
       const response = await fetch(`${API_URL}/posts`, {
@@ -64,21 +63,56 @@ function Posts() {
         body: formData,
       });
 
+      if (!response.ok) {
+        throw new Error(`Upload failed: ${response.statusText}`);
+      }
+
       const data = await response.json();
       console.log("Response:", data);
+
+      alert("Post uploaded successfully!");
+      setPostData({
+        title: "",
+        model: "",
+        year_of_manufacture: "",
+        condition: "",
+        color_in: "",
+        color_out: "",
+        registered: "",
+        mileage: "",
+        transmission: "",
+        body: "",
+        fuel: "",
+        engine_size: "",
+        horse_power: "",
+        description: "",
+        price: "",
+        location: "",
+        contact: "",
+        name: "",
+      });
+
+      imagesRef.current.value = ""; // Reset file input
       getImages(); // Refresh images after upload
     } catch (error) {
       console.error("Upload error:", error);
+      alert("Failed to upload post. Please try again.");
     }
   };
 
   const getImages = async () => {
     try {
-      const response = await fetch(`${API_URL}/posts/${postToGet.current.value}`);
+      const response = await fetch(`${API_URL}/posts`);
+      if (!response.ok) {
+        throw new Error(`Error fetching images: ${response.statusText}`);
+      }
+
       const data = await response.json();
-      setImages(data.images);
+      if (data.images) {
+        setImages(data.images);
+      }
     } catch (error) {
-      console.error("Fetching error:", error);
+      console.error("Error fetching images:", error);
     }
   };
 
@@ -113,18 +147,16 @@ function Posts() {
         </button>
       </form>
 
-      {/* <h2>Retrieve Images</h2> */}
-      {/* <div>
-        <input type="number" ref={postToGet} placeholder="Post ID to retrieve" />
-        <button onClick={getImages}>Get Images</button>
-      </div> */}
-
-      {/* <h2>Images</h2> */}
-      {/* <div className="images">
-        {images.map((image, index) => (
-          <img key={index} src={image} alt="uploaded" style={{ width: "100px", height: "100px" }} />
-        ))}
-      </div> */}
+      <h2>Uploaded Images</h2>
+      <div className="images">
+        {images.length > 0 ? (
+          images.map((image, index) => (
+            <img key={index} src={image} alt="uploaded" style={{ width: "100px", height: "100px", margin: "5px" }} />
+          ))
+        ) : (
+          <p>No images uploaded yet.</p>
+        )}
+      </div>
     </div>
   );
 }

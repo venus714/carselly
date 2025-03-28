@@ -8,7 +8,7 @@ function Home() {
       <header className="hero-section">
         <h1 className="hero-title">Welcome to Car Marketplace</h1>
         <p className="hero-description">Buy and sell cars seamlessly with the best deals and trusted sellers.</p>
-        <Link to="/listings">
+        <Link to="/cars">
           <button className="primary-btn">Browse Cars</button>
         </Link>
       </header>
@@ -17,14 +17,14 @@ function Home() {
         <div className="feature">
           <h3>Sell Your Car</h3>
           <p>Easily list your car and reach thousands of potential buyers.</p>
-          <Link to="/sell">
+          <Link to="/posts">
             <button className="secondary-btn">Sell Now</button>
           </Link>
         </div>
         <div className="feature">
           <h3>Buy a Car</h3>
           <p>Explore a wide range of cars at unbeatable prices.</p>
-          <Link to="/listings">
+          <Link to="/cars">
             <button className="secondary-btn">Explore Cars</button>
           </Link>
         </div>
