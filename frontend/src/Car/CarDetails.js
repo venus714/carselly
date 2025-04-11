@@ -88,24 +88,34 @@ const CarDetails = () => {
         <p>No images available</p>
       )}
 
-      <div className="car-details-info">
-        <p><strong>Model:</strong> {car.model}</p>
-        <p><strong>Year of Manufacture:</strong> {car.year_of_manufacture}</p>
-        <p><strong>Condition:</strong> {car.condition}</p>
-        <p><strong>Color (Interior):</strong> {car.color_in}</p>
-        <p><strong>Color (Exterior):</strong> {car.color_out}</p>
-        <p><strong>Registered:</strong> {car.registered ? "Yes" : "No"}</p>
-        <p><strong>Mileage:</strong> {car.mileage} km</p>
-        <p><strong>Transmission:</strong> {car.transmission}</p>
-        <p><strong>Body Type:</strong> {car.body}</p>
-        <p><strong>Fuel Type:</strong> {car.fuel}</p>
-        <p><strong>Engine Size:</strong> {car.engine_size} CC</p>
-        <p><strong>Horse Power:</strong> {car.horse_power} HP</p>
-        <p><strong>Description:</strong> {car.description}</p>
-        <p><strong>Price:</strong> ${car.price}</p>
-        <p><strong>Location:</strong> {car.location}</p>
-        <p><strong>Contact:</strong> {car.contact} ({car.name})</p>
-      </div>
+<div className="car-details-info">
+  <div className="info-section">
+    <p><strong>Model:</strong> {car.model}</p>
+    <p><strong>Year of Manufacture:</strong> {car.year_of_manufacture}</p>
+    <p><strong>Condition:</strong> {car.condition}</p>
+    <p><strong>Registered:</strong> {car.registered ? "Yes" : "No"}</p>
+  
+    <p><strong>Description:</strong> {car.description}</p>
+  </div>
+
+  <div className="info-section">
+    <p><strong>Transmission:</strong> {car.transmission}</p>
+    <p><strong>Mileage:</strong> {car.mileage} km</p>
+    <p><strong>Engine Size:</strong> {car.engine_size} CC</p>
+    <p><strong>Horse Power:</strong> {car.horse_power} HP</p>
+    <p><strong>Body Type:</strong> {car.body}</p>
+    <p><strong>Fuel Type:</strong> {car.fuel}</p>
+  </div>
+
+  <div className="info-section">
+    <p><strong>Price:</strong> ${car.price}</p>
+    <p><strong>Color (Interior):</strong> {car.color_in}</p>
+    <p><strong>Color (Exterior):</strong> {car.color_out}</p>
+    <p><strong>Location:</strong> {car.location}</p>
+    <p><strong>Contact:</strong> {car.contact} ({car.name})</p>
+  </div>
+</div>
+
 
       <div className="car-details-actions">
         <button className="update-button" onClick={handleUpdate}>Update</button>
