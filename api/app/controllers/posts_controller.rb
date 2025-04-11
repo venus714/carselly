@@ -13,10 +13,12 @@ class PostsController < ApplicationController
   end
   
   def show
+    @post = Post.find(params[:id]) # Fetch post by ID
     render json: @post.as_json.merge(
       images: @post.images.map { |image| url_for(image) }.uniq
     )
   end
+  
   
 
   # GET /posts/new

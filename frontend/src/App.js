@@ -8,6 +8,7 @@ import Home from "./home/Home";
 import "./Car/style.css"
 import Navbar from "../src/Navbar/navbar";
 import Posts from "./posts/Posts";
+import CarDetails from "./Car/CarDetails";
 
 
 
@@ -21,7 +22,7 @@ function App() {
           <Route path="/" element={<LoginForm />} />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/cars" element={<CarCard />} /> {/* Route to view all cars */}
-          {/* <Route path="/add" element={<CarForm />} /> Route  */}
+          <Route path="/cars/:carId" element={<CarDetails />} />
           <Route path="/home" element={<Home />} /> {/* Route */}
          < Route path="/posts" element={<Posts />} /> {/* Route */}
          

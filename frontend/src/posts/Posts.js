@@ -40,20 +40,20 @@ function Posts() {
       return;
     }
 
-    if (!imagesRef.current.files.length) {
-      alert("Please select at least one image.");
+    const selectedFiles = imagesRef.current.files;
+
+    if (!selectedFiles || selectedFiles.length < 3) {
+      alert("Please select at least 3 images.");
       return;
     }
 
     const formData = new FormData();
 
-    // Append all post fields
     Object.keys(postData).forEach((key) => {
       formData.append(`post[${key}]`, postData[key]);
     });
 
-    // Append images
-    Array.from(imagesRef.current.files).forEach((file) => {
+    Array.from(selectedFiles).forEach((file) => {
       formData.append("post[images][]", file);
     });
 
@@ -71,6 +71,7 @@ function Posts() {
       console.log("Response:", data);
 
       alert("Post uploaded successfully!");
+
       setPostData({
         title: "",
         model: "",
@@ -92,8 +93,8 @@ function Posts() {
         name: "",
       });
 
-      imagesRef.current.value = ""; // Reset file input
-      getImages(); // Refresh images after upload
+      imagesRef.current.value = "";
+      getImages();
     } catch (error) {
       console.error("Upload error:", error);
       alert("Failed to upload post. Please try again.");
@@ -139,8 +140,8 @@ function Posts() {
         <input type="text" name="contact" placeholder="Contact Information" value={postData.contact} onChange={handleChange} />
         <input type="text" name="name" placeholder="Your Name" value={postData.name} onChange={handleChange} />
 
-        <label>Upload Images:</label>
-        <input type="file" name="images" multiple ref={imagesRef} />
+        <label>Upload Images (Minimum 3):</label>
+        <input type="file" name="images" multiple ref={imagesRef} accept="image/*" />
 
         <button type="button" onClick={handleUpload}>
           Submit Post
@@ -151,7 +152,12 @@ function Posts() {
       <div className="images">
         {images.length > 0 ? (
           images.map((image, index) => (
-            <img key={index} src={image} alt="uploaded" style={{ width: "100px", height: "100px", margin: "5px" }} />
+            <img
+              key={index}
+              src={image}
+              alt={`uploaded-${index}`}
+              style={{ width: "100px", height: "100px", margin: "5px" }}
+            />
           ))
         ) : (
           <p>No images uploaded yet.</p>
