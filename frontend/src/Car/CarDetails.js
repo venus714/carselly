@@ -108,12 +108,28 @@ const CarDetails = () => {
   </div>
 
   <div className="info-section">
-    <p><strong>Price:</strong> ${car.price}</p>
+  <p className="car-price"><strong>Price:</strong> ${car.price}</p>
     <p><strong>Color (Interior):</strong> {car.color_in}</p>
     <p><strong>Color (Exterior):</strong> {car.color_out}</p>
     <p><strong>Location:</strong> {car.location}</p>
     <p><strong>Contact:</strong> {car.contact} ({car.name})</p>
   </div>
+  <div className="info-section safety-tips">
+  <h3>Safety Tips</h3>
+  <ul>
+    <li>Avoid sending any prepayments</li>
+    <li>Meet with the seller at a safe public place</li>
+    <li>Inspect what you're going to buy to make sure it's what you need</li>
+    <li>Check all the documents and only pay if you're satisfied</li>
+  </ul>
+  <div className="post-ad-button-container">
+  <button className="post-ad-button" onClick={() => navigate("/posts")}>
+    Post similar Ad
+  </button>
+</div>
+
+</div>
+
 </div>
 
 

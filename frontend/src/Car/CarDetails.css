@@ -52,6 +52,13 @@
   margin-top: 1.5rem;
   flex-wrap: wrap;
 }
+.car-price {
+  font-size: 1.8rem; /* Increase the font size */
+  font-weight: bold; /* Make it bold */
+  color: #1a1a1a; /* Optional: make it more prominent with a strong color */
+  margin: 10px 0;
+}
+
 
 .info-section {
   flex: 1;
@@ -90,4 +97,31 @@
 .error-message {
   color: red;
   text-align: center;
+}
+.post-ad-button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.post-ad-button {
+  background-color: #28a745; /* Green color */
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.post-ad-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.post-ad-button:active {
+  background-color: #1e7e34;
+  transform: translateY(0);
 }
