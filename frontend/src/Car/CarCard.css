@@ -107,3 +107,54 @@
   margin-top: 10px;
   font-weight: 500;
 }
+/* Add this to your CarCard.css */
+
+/* Style the Filters Section */
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* spacing between dropdowns */
+  margin-bottom: 30px; /* space below filters */
+  flex-wrap: wrap; /* responsive on smaller screens */
+}
+
+.filters select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+.filters select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Optional: slightly enhance car cards */
+.car-card-container {
+  padding: 20px;
+}
+
+.car-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+}
+
+.car-image-container img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}

@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginForm from "./login/Login";
 import SignUpForm from "../src/signup/Signup";
 import CarCard from "./Car/CarCard";
-// import CarForm from "./Car/CarForm";
 import Home from "./home/Home";
 import "./Car/style.css"
 import Navbar from "../src/Navbar/navbar";
 import Posts from "./posts/Posts";
 import CarDetails from "./Car/CarDetails";
+import Packages from "./packages/Packages";
 
 
 
@@ -24,6 +24,7 @@ function App() {
           <Route path="/cars" element={<CarCard />} /> {/* Route to view all cars */}
           <Route path="/cars/:carId" element={<CarDetails />} />
           <Route path="/home" element={<Home />} /> {/* Route */}
+          <Route path="/packages" element={<Packages />} /> {/* Route */}
          < Route path="/posts" element={<Posts />} /> {/* Route */}
          
         </Routes>

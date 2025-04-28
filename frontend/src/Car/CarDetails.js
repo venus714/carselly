@@ -122,8 +122,9 @@ const CarDetails = () => {
     <li>Inspect what you're going to buy to make sure it's what you need</li>
     <li>Check all the documents and only pay if you're satisfied</li>
   </ul>
+  
   <div className="post-ad-button-container">
-  <button className="post-ad-button" onClick={() => navigate("/posts")}>
+  <button className="post-ad-button" onClick={() => navigate("/posts ")}>
     Post similar Ad
   </button>
 </div>

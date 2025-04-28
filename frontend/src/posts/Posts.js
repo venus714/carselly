@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom"; // 👈 import useNavigate
 import "./Posts.css";
 
 const API_URL = "http://127.0.0.1:3000";
 
 function Posts() {
+  const navigate = useNavigate(); // 👈 create navigate function
   const [postData, setPostData] = useState({
     title: "",
     model: "",
@@ -117,6 +119,32 @@ function Posts() {
     }
   };
 
+  const handleSelectPackage = () => {
+    const selectedFiles = imagesRef.current.files;
+
+    if (!selectedFiles || selectedFiles.length < 3) {
+      alert("Please select at least 3 images.");
+      return;
+    }
+
+    // Save form data and images temporarily
+    localStorage.setItem("pendingPostData", JSON.stringify(postData));
+    localStorage.setItem("pendingPostImagesCount", selectedFiles.length);
+
+    // Save images separately because File objects can't be stored directly in localStorage
+    const imageFiles = Array.from(selectedFiles);
+    imageFiles.forEach((file, index) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        localStorage.setItem(`pendingImage${index}`, reader.result);
+      };
+      reader.readAsDataURL(file); // Convert file to base64
+    });
+
+    // Then navigate to packages
+    navigate("/packages");
+  };
+
   return (
     <div className="upload-form">
       <h2>Create Post</h2>
@@ -143,11 +171,36 @@ function Posts() {
         <label>Upload Images (Minimum 3):</label>
         <input type="file" name="images" multiple ref={imagesRef} accept="image/*" />
 
-        <button type="button" onClick={handleUpload}>
-          Submit Post
-        </button>
+        <button type="button" onClick={handleSelectPackage} className="select-package-button">
+              Select Package
+            </button>
       </form>
 
+            {/* Sell Steps Section */}
+            <div className="sell-steps">
+        <h3>Steps to Sell Your Car:</h3>
+        <div className="steps-list">
+          <div className="step-item">
+            <i className="fas fa-pencil-alt"></i>
+            <span>Enter your car details</span>
+          </div>
+          <div className="step-item">
+            <i className="fas fa-camera-retro"></i>
+            <span>Upload high-quality images</span>
+          </div>
+          <div className="step-item">
+            <i className="fas fa-cogs"></i>
+            <span>Select your package</span>
+          </div>
+          <div className="step-item">
+            <i className="fas fa-paper-plane"></i>
+            <span>Post your ad and reach millions of buyers</span>
+          </div>
+        </div>
+      </div>
+
+
+      {/* Uploaded Images */}
       <h2>Uploaded Images</h2>
       <div className="images">
         {images.length > 0 ? (

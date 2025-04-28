@@ -56,4 +56,87 @@
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
+  .sell-steps-card-horizontal {
+    background: #f9f9f9;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sell-steps-card-horizontal h2,
+  .sell-subtitle {
+    text-align: center;
+  }
+  
+  .horizontal-steps {
+    display: flex;
+    flex-direction: row;   /* Horizontal */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .step-item {
+    background: white;
+    flex: 1; /* Equal width for each */
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .step-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #4a90e2;
+  }
+  
+  .step-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .step-item p {
+    font-size: 0.95rem;
+    color: #777;
+  }
+  .sell-steps {
+    margin-top: 20px;
+  }
+  
+  .sell-steps h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .steps-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .step-item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    width: 22%; /* Adjust width for each item */
+  }
+  
+  .step-item i {
+    font-size: 2rem; /* Adjust icon size */
+    margin-right: 8px;
+  }
+  
+  .step-item span {
+    font-size: 1rem;
+  }
   
