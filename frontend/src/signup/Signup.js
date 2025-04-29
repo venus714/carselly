@@ -127,5 +127,8 @@ const SignUpForm = () => {
     </section>
   );
 };
+<footer className="footer-section">
+<p>&copy; 2025 Car Marketplace. All rights reserved.</p>
+</footer>
 
 export default SignUpForm;

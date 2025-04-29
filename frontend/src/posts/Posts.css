@@ -139,4 +139,64 @@
   .step-item span {
     font-size: 1rem;
   }
+  .sell-steps-horizontal {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .sell-steps-horizontal h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .steps-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .step-box {
+    flex: 1 1 20%;
+    min-width: 150px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+  }
+  
+  .step-box i {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .step-box h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #222;
+  }
+  
+  .step-box p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .step-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  .footer-section {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
   

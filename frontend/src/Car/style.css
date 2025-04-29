@@ -46,4 +46,10 @@
   .car-card p {
     margin: 5px 0;
   }
-  
+  .footer-section {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+  }

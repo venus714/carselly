@@ -97,4 +97,10 @@
       display: block;
     }
   }
-  
+  .footer-section {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+  }

@@ -138,8 +138,10 @@ const CarDetails = () => {
         <button className="update-button" onClick={handleUpdate}>Update</button>
         <button className="delete-button" onClick={handleDelete}>Delete</button>
       </div>
-    </div>
+      <footer className="footer-section">
+<p>&copy; 2025 Car Marketplace. All rights reserved.</p>
+</footer>
+</div>
   );
 };
-
 export default CarDetails;

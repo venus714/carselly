@@ -72,3 +72,10 @@ h2 {
         padding: 10px;
     }
 }
+.footer-section {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+  }

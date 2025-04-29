@@ -150,8 +150,10 @@ const CarCard = () => {
       ) : (
         <p>No cars available</p>
       )}
-    </div>
+<footer className="footer-section">
+<p>&copy; 2025 Car Marketplace. All rights reserved.</p>
+</footer>
+</div>
   );
 };
-
 export default CarCard;

@@ -125,3 +125,10 @@
   background-color: #1e7e34;
   transform: translateY(0);
 }
+.footer-section {
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}

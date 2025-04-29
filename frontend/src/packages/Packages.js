@@ -77,8 +77,11 @@ function Packages() {
         <button className="package-button" onClick={() => handlePackageSelect("30 days KSh 900")}>30 days KSh 900</button>
         <button className="package-button" onClick={() => handlePackageSelect("Boost Premium promo 1 month KSh 8,699")}>Boost Premium promo 1 month KSh 8,699</button>
       </div>
-    </div>
+      <footer className="footer-section">
+<p>&copy; 2025 Car Marketplace. All rights reserved.</p>
+</footer>
+</div>
   );
-}
+};
 
 export default Packages;
