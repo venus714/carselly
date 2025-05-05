@@ -38,7 +38,7 @@ const LoginForm = () => {
       <div className="card">
         <div className="image-container">
           <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+            src="https://images.pexels.com/photos/5680754/pexels-photo-5680754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="login form"
           />
         </div>

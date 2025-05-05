@@ -59,7 +59,7 @@ const SignUpForm = () => {
       <div className="signup-card">
         <div className="signup-image-container">
           <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img2.webp"
+            src="https://images.pexels.com/photos/14498784/pexels-photo-14498784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="signup form"
           />
         </div>
