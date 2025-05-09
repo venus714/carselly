@@ -49,9 +49,14 @@ const SignUpForm = () => {
         }, 2000);
       }
     } catch (error) {
-      setError("Signup failed. Please try again.");
+      if (error.response && error.response.data && error.response.data.error) {
+        setError(error.response.data.error.join(", "));
+      } else {
+        setError("Signup failed. Please try again.");
+      }
       console.error("Error during signup:", error);
     }
+    
   };
 
   return (

@@ -6,7 +6,7 @@ import "../login/LoginForm.css";
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState("");  
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {

@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
     has_many_attached :images # Attach multiple images
+    # belongs_to :user
   
     validates :title, :model, :year_of_manufacture, :condition, :color_in, 
               :color_out, :registered, :mileage, :transmission, :body, 
