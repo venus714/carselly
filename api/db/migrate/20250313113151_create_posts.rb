@@ -19,6 +19,7 @@ class CreatePosts < ActiveRecord::Migration[7.2]
       t.string :location, null: false
       t.string :contact, null: false
       t.string :name, null: false
+      t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps
     end

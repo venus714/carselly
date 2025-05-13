@@ -1,15 +1,15 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show edit update destroy]
+  skip_before_action :authorized, only: [:index, :show]
+  before_action :set_post, only: %i[show update destroy]
 
-
-  def index
-    @posts = Post.all
-  
+def index
+   @posts = Post.all
     render json: @posts.map { |post|
-      post.as_json.merge(
-        images: post.images.map { |image| url_for(image) }.uniq
-      )
-    }
+  post.as_json.merge(
+    images: post.images.map { |image| url_for(image) }.uniq
+  )
+}
+
   end
   
   def show
@@ -31,22 +31,23 @@ class PostsController < ApplicationController
   end
 
   # POST /posts or /posts.json
-  def create
-    Rails.logger.info "Received parameters: #{params.inspect}"
-  
-    @post = Post.new(post_params)
-  
-    if @post.save
-      Rails.logger.info "Post created successfully with ID: #{@post.id}"
-      render json: @post.as_json.merge(
-        images: @post.images.map { |image| url_for(image) }
-      ), status: :created
-    else
-      Rails.logger.error "Failed to create post: #{@post.errors.full_messages}"
-      render json: @post.errors, status: :unprocessable_entity
-    end
+# POST /posts or /posts.json
+def create
+  Rails.logger.info "Received parameters: #{params.inspect}"
+
+  @post = current_user.posts.build(post_params)
+
+  if @post.save
+    Rails.logger.info "Post created successfully with ID: #{@post.id}"
+    render json: @post.as_json.merge(
+      images: @post.images.map { |image| url_for(image) }
+    ), status: :created
+  else
+    Rails.logger.error "Failed to create post: #{@post.errors.full_messages}"
+    render json: @post.errors, status: :unprocessable_entity
   end
-  
+end
+
   
   
   # PATCH/PUT /posts/1 or /posts/1.json
