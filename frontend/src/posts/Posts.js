@@ -1,48 +1,36 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./Posts.css";
 
 const API_URL = "http://127.0.0.1:3000";
 
 function Posts() {
   const navigate = useNavigate();
+  const token = localStorage.getItem("authToken");  // Changed from 'token' to 'authToken'
   const [postData, setPostData] = useState({
-    title: "",
-    model: "",
-    year_of_manufacture: "",
-    condition: "",
-    color_in: "",
-    color_out: "",
-    registered: "",
-    mileage: "",
-    transmission: "",
-    body: "",
-    fuel: "",
-    engine_size: "",
-    horse_power: "",
-    description: "",
-    price: "",
-    location: "",
-    contact: "",
-    name: "",
+    title: "", model: "", year_of_manufacture: "", condition: "", color_in: "", color_out: "",
+    registered: "", mileage: "", transmission: "", body: "", fuel: "", engine_size: "",
+    horse_power: "", description: "", price: "", location: "", contact: "", name: "",
   });
 
   const [images, setImages] = useState([]);
   const imagesRef = useRef();
 
   const handleChange = (e) => {
-    setPostData({ ...postData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setPostData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const handleUpload = async (e) => {
     e.preventDefault();
 
+    const selectedFiles = imagesRef.current.files;
+
     if (!postData.title.trim()) {
       alert("Please enter a title.");
       return;
     }
-
-    const selectedFiles = imagesRef.current.files;
 
     if (!selectedFiles || selectedFiles.length < 3) {
       alert("Please select at least 3 images.");
@@ -50,9 +38,8 @@ function Posts() {
     }
 
     const formData = new FormData();
-
-    Object.keys(postData).forEach((key) => {
-      formData.append(`post[${key}]`, postData[key]);
+    Object.entries(postData).forEach(([key, value]) => {
+      formData.append(`post[${key}]`, value);
     });
 
     Array.from(selectedFiles).forEach((file) => {
@@ -60,62 +47,49 @@ function Posts() {
     });
 
     try {
-      const response = await fetch(`${API_URL}/posts`, {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error(`Upload failed: ${response.statusText}`);
+      // Check if token is available before making the request
+      if (!token) {
+        alert("You are not logged in. Please log in to upload a post.");
+        navigate("/login");  // Redirect to login page if no token is found
+        return;
       }
 
-      const data = await response.json();
-      console.log("Response:", data);
-
-      alert("Post uploaded successfully!");
-
-      setPostData({
-        title: "",
-        model: "",
-        year_of_manufacture: "",
-        condition: "",
-        color_in: "",
-        color_out: "",
-        registered: "",
-        mileage: "",
-        transmission: "",
-        body: "",
-        fuel: "",
-        engine_size: "",
-        horse_power: "",
-        description: "",
-        price: "",
-        location: "",
-        contact: "",
-        name: "",
+      const response = await axios.post(`${API_URL}/posts`, formData, {
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "multipart/form-data"
+        }
       });
 
+      alert("Post uploaded successfully!");
+      setPostData({
+        title: "", model: "", year_of_manufacture: "", condition: "", color_in: "", color_out: "",
+        registered: "", mileage: "", transmission: "", body: "", fuel: "", engine_size: "",
+        horse_power: "", description: "", price: "", location: "", contact: "", name: "",
+      });
       imagesRef.current.value = "";
-      getImages();
+      fetchImages();
+
     } catch (error) {
-      console.error("Upload error:", error);
-      alert("Failed to upload post. Please try again.");
+      if (error.response && error.response.status === 401) {
+        alert("You are not authorized. Please log in again.");
+        localStorage.removeItem("authToken");  // Clear token from localStorage
+        navigate("/login");  // Redirect to login page if token is invalid
+      } else {
+        console.error("Upload failed:", error);
+        alert("Failed to upload post. Please try again.");
+      }
     }
   };
 
-  const getImages = async () => {
+  const fetchImages = async () => {
     try {
-      const response = await fetch(`${API_URL}/posts`);
-      if (!response.ok) {
-        throw new Error(`Error fetching images: ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      if (data.images) {
-        setImages(data.images);
+      const response = await axios.get(`${API_URL}/posts`);
+      if (response.data.images) {
+        setImages(response.data.images);
       }
     } catch (error) {
-      console.error("Error fetching images:", error);
+      console.error("Fetching images failed:", error);
     }
   };
 
@@ -130,8 +104,7 @@ function Posts() {
     localStorage.setItem("pendingPostData", JSON.stringify(postData));
     localStorage.setItem("pendingPostImagesCount", selectedFiles.length);
 
-    const imageFiles = Array.from(selectedFiles);
-    imageFiles.forEach((file, index) => {
+    Array.from(selectedFiles).forEach((file, index) => {
       const reader = new FileReader();
       reader.onload = () => {
         localStorage.setItem(`pendingImage${index}`, reader.result);
@@ -144,31 +117,46 @@ function Posts() {
 
   return (
     <>
-      {/* Main Upload Form */}
       <div className="upload-form">
         <h2>Create Post</h2>
-        <form encType="multipart/form-data" onSubmit={handleUpload}>
-          <input type="text" name="title" placeholder="Title" value={postData.title} onChange={handleChange} />
-          <input type="text" name="model" placeholder="Model" value={postData.model} onChange={handleChange} />
-          <input type="number" name="year_of_manufacture" placeholder="Year of Manufacture" value={postData.year_of_manufacture} onChange={handleChange} />
-          <input type="text" name="condition" placeholder="Condition" value={postData.condition} onChange={handleChange} />
-          <input type="text" name="color_in" placeholder="Interior Color" value={postData.color_in} onChange={handleChange} />
-          <input type="text" name="color_out" placeholder="Exterior Color" value={postData.color_out} onChange={handleChange} />
-          <input type="text" name="registered" placeholder="Registered" value={postData.registered} onChange={handleChange} />
-          <input type="number" name="mileage" placeholder="Mileage" value={postData.mileage} onChange={handleChange} />
-          <input type="text" name="transmission" placeholder="Transmission" value={postData.transmission} onChange={handleChange} />
-          <input type="text" name="body" placeholder="Body Type" value={postData.body} onChange={handleChange} />
-          <input type="text" name="fuel" placeholder="Fuel Type" value={postData.fuel} onChange={handleChange} />
-          <input type="number" name="engine_size" placeholder="Engine Size (cc)" value={postData.engine_size} onChange={handleChange} />
-          <input type="number" name="horse_power" placeholder="Horse Power" value={postData.horse_power} onChange={handleChange} />
-          <textarea name="description" placeholder="Description" value={postData.description} onChange={handleChange} />
-          <input type="number" name="price" placeholder="Price" value={postData.price} onChange={handleChange} />
-          <input type="text" name="location" placeholder="Location" value={postData.location} onChange={handleChange} />
-          <input type="text" name="contact" placeholder="Contact Information" value={postData.contact} onChange={handleChange} />
-          <input type="text" name="name" placeholder="Your Name" value={postData.name} onChange={handleChange} />
+        <form onSubmit={handleUpload} encType="multipart/form-data">
+          {[
+            { name: "title", type: "text", placeholder: "Title" },
+            { name: "model", type: "text", placeholder: "Model" },
+            { name: "year_of_manufacture", type: "number", placeholder: "Year of Manufacture" },
+            { name: "condition", type: "text", placeholder: "Condition" },
+            { name: "color_in", type: "text", placeholder: "Interior Color" },
+            { name: "color_out", type: "text", placeholder: "Exterior Color" },
+            { name: "registered", type: "text", placeholder: "Registered" },
+            { name: "mileage", type: "number", placeholder: "Mileage" },
+            { name: "transmission", type: "text", placeholder: "Transmission" },
+            { name: "body", type: "text", placeholder: "Body Type" },
+            { name: "fuel", type: "text", placeholder: "Fuel Type" },
+            { name: "engine_size", type: "number", placeholder: "Engine Size (cc)" },
+            { name: "horse_power", type: "number", placeholder: "Horse Power" },
+            { name: "price", type: "number", placeholder: "Price" },
+            { name: "location", type: "text", placeholder: "Location" },
+            { name: "contact", type: "text", placeholder: "Contact Information" },
+            { name: "name", type: "text", placeholder: "Your Name" },
+          ].map((field) => (
+            <input
+              key={field.name}
+              name={field.name}
+              type={field.type}
+              placeholder={field.placeholder}
+              value={postData[field.name]}
+              onChange={handleChange}
+            />
+          ))}
+          <textarea
+            name="description"
+            placeholder="Description"
+            value={postData.description}
+            onChange={handleChange}
+          />
 
           <label>Upload Images (Minimum 3):</label>
-          <input type="file" name="images" multiple ref={imagesRef} accept="image/*" />
+          <input type="file" multiple ref={imagesRef} accept="image/*" />
 
           <button type="button" onClick={handleSelectPackage} className="select-package-button">
             Select Package
@@ -176,39 +164,29 @@ function Posts() {
           <button type="submit">Submit Post</button>
         </form>
 
-        {/* Sell Steps */}
         <div className="sell-steps-horizontal">
           <h3>Sell Your Car in 4 Simple Steps</h3>
           <div className="steps-container">
-            <div className="step-box">
-              <i className="fas fa-car"></i>
-              <h4>Step 1</h4>
-              <p>Enter Car Details</p>
-            </div>
-            <div className="step-box">
-              <i className="fas fa-camera"></i>
-              <h4>Step 2</h4>
-              <p>Upload Car Photos</p>
-            </div>
-            <div className="step-box">
-              <i className="fas fa-tags"></i>
-              <h4>Step 3</h4>
-              <p>Select Package</p>
-            </div>
-            <div className="step-box">
-              <i className="fas fa-bullhorn"></i>
-              <h4>Step 4</h4>
-              <p>Post Your Ad</p>
-            </div>
+            {[
+              { icon: "fas fa-car", title: "Step 1", desc: "Enter Car Details" },
+              { icon: "fas fa-camera", title: "Step 2", desc: "Upload Car Photos" },
+              { icon: "fas fa-tags", title: "Step 3", desc: "Select Package" },
+              { icon: "fas fa-bullhorn", title: "Step 4", desc: "Post Your Ad" },
+            ].map((step, idx) => (
+              <div className="step-box" key={idx}>
+                <i className={step.icon}></i>
+                <h4>{step.title}</h4>
+                <p>{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Uploaded Images */}
         <h2>Uploaded Images</h2>
         <div className="images">
           {images.length > 0 ? (
-            images.map((image, index) => (
-              <img key={index} src={image} alt={`uploaded-${index}`} style={{ width: "100px", height: "100px", margin: "5px" }} />
+            images.map((img, index) => (
+              <img key={index} src={img} alt={`uploaded-${index}`} style={{ width: "100px", height: "100px", margin: "5px" }} />
             ))
           ) : (
             <p>No images uploaded yet.</p>
@@ -216,7 +194,6 @@ function Posts() {
         </div>
       </div>
 
-      {/* Footer - outside the upload-form div */}
       <footer className="footer-section">
         <p>&copy; 2025 Car Marketplace. All rights reserved.</p>
       </footer>

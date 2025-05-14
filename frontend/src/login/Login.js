@@ -2,36 +2,33 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../login/LoginForm.css";
+import { useAuth } from "../AuthContext"; // 👈 Add this
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");  
+  const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth(); // 👈 Access login function
 
   const handleLogin = async (event) => {
     event.preventDefault();
-  
+
     try {
       const response = await axios.post("http://127.0.0.1:3000/login", {
         user: { email, password },
       });
-  
-      console.log("Response data:", response.data); // Debugging
-  
-      if (response.status === 202) { // Check if backend returns 202 instead of 200
-        const token = response.data.jwt; // Ensure this matches your API response
-        localStorage.setItem("authToken", token);
-        console.log("Login successful!");
-        navigate("/home"); // Redirect to home page
+
+      if (response.status === 202) {
+        const token = response.data.jwt;
+        login(token); // 👈 Set auth token in context
+        navigate("/home");
       }
     } catch (error) {
       setError("Login failed. Please check your credentials.");
       console.error("Error during login:", error);
     }
   };
-  
-  
 
   return (
     <section className="section-container">

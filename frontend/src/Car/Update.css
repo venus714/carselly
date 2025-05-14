@@ -1,0 +1,42 @@
+.update-car-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+.update-car-form label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+
+.update-car-form input,
+.update-car-form textarea,
+.update-car-form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.update-car-form button {
+  padding: 0.7rem 1.2rem;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.update-car-form button:hover {
+  background-color: #219150;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}

@@ -1,35 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../Navbar/navbar.css'; // Ensure this file exists and is correctly placed
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../AuthContext";
+import "../Navbar/navbar.css"; // Adjust the path as necessary
 
 function Navbar() {
+  const { isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
-    <div className="navbar">
-      <nav className="navbar-menu">
-        <Link to="/home" className="navbar-brand">Car Marketplace</Link>
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link to="/home" className="nav-link">Home</Link>
-          </li>
-          
-          <li className="nav-item">
-            <Link to="/cars" className="nav-link">Cars</Link>
-          </li>
-          {/* <li className="nav-item">
-            <Link to="/add" className="nav-link">Add Car</Link>
-          </li> */}
-          <li className="nav-item">
-            <Link to="/posts" className="nav-link">Post</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/login" className="nav-link">Login</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/signup" className="nav-link">Sign Up</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <nav className="navbar">
+      <Link to="/home">Home</Link>
+      <Link to="/cars">Cars</Link>
+      <Link to="/posts">Posts</Link>
+      <Link to="/about">About</Link>
+
+      {!isAuthenticated && (
+        <>
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Sign Up</Link>
+        </>
+      )}
+
+      {isAuthenticated && (
+        <button onClick={handleLogout}>Sign Out</button>
+      )}
+    </nav>
   );
 }
 

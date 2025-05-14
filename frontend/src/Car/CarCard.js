@@ -14,75 +14,101 @@ const CarCard = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchCars = async () => {
-      try {
-        const response = await fetch(`${API_URL}/posts`);
-        if (!response.ok) {
-          throw new Error("Failed to fetch car details");
-        }
-        const data = await response.json();
-        setCars(data);
-        setFilteredCars(data);
-        setError(null);
-      } catch (err) {
-        console.error("Fetching error:", err);
-        setError(err.message);
-        setCars([]);
-        setFilteredCars([]);
-      }
-    };
+  // ✅ Function to fetch all car posts
+  const fetchCars = async () => {
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      setError("No authentication token found");
+      return;
+    }
 
+    try {
+      const response = await fetch(`${API_URL}/posts`, {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch cars");
+      }
+
+      const data = await response.json();
+      setCars(data);
+    } catch (err) {
+      console.error("Error fetching cars:", err);
+      setError("Failed to load cars.");
+    }
+  };
+
+  useEffect(() => {
     fetchCars();
   }, []);
 
-  // Handle filtering
+  // ✅ Apply filters whenever filters or cars change
   useEffect(() => {
     let filtered = [...cars];
 
     if (modelFilter) {
-      filtered = filtered.filter((car) => car.model.toLowerCase() === modelFilter.toLowerCase());
+      filtered = filtered.filter((car) =>
+        car.model.toLowerCase().includes(modelFilter.toLowerCase())
+      );
     }
 
     if (priceFilter) {
-      const [minPrice, maxPrice] = priceFilter.split("-").map(Number);
-      filtered = filtered.filter((car) => car.price >= minPrice && car.price <= maxPrice);
+      const [min, max] = priceFilter.split("-").map(Number);
+      filtered = filtered.filter((car) => car.price >= min && car.price <= max);
     }
 
     if (yearFilter) {
-      filtered = filtered.filter((car) => car.year_of_manufacture.toString() === yearFilter);
+      filtered = filtered.filter(
+        (car) => car.year_of_manufacture.toString() === yearFilter
+      );
     }
 
     setFilteredCars(filtered);
-  }, [modelFilter, priceFilter, yearFilter, cars]);
+  }, [cars, modelFilter, priceFilter, yearFilter]);
 
-  // Handle Delete
+  // ✅ Delete car by ID
   const handleDelete = async (carId) => {
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      setError("No authentication token found");
+      return;
+    }
+
     try {
       const response = await fetch(`${API_URL}/posts/${carId}`, {
-        method: 'DELETE',
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
       });
+
       if (!response.ok) {
         throw new Error("Failed to delete car");
       }
-      setCars(cars.filter((car) => car.id !== carId));
+
+      setCars((prevCars) => prevCars.filter((car) => car.id !== carId));
     } catch (err) {
       console.error("Delete error:", err);
       setError("Failed to delete the car.");
     }
   };
 
-  // Handle Update
+  // ✅ Navigate to update form
   const handleUpdate = (carId) => {
-    navigate(`/update-car/${carId}`);
+    navigate(`/cars/${carId}`);
   };
 
-  // Navigate to detailed page
+  // ✅ Navigate to detailed page
   const handleClickImage = (carId) => {
     navigate(`/cars/${carId}`);
   };
 
-  // Get unique models and years for dropdowns
+  // ✅ Create unique model/year options
   const uniqueModels = [...new Set(cars.map((car) => car.model))];
   const uniqueYears = [...new Set(cars.map((car) => car.year_of_manufacture))];
 
@@ -92,7 +118,7 @@ const CarCard = () => {
 
       {error && <p className="error-message">{error}</p>}
 
-      {/* Search/Filter Section */}
+      {/* Filters */}
       <div className="filters">
         <select value={modelFilter} onChange={(e) => setModelFilter(e.target.value)}>
           <option value="">All Models</option>
@@ -117,7 +143,7 @@ const CarCard = () => {
         </select>
       </div>
 
-      {/* Car Cards */}
+      {/* Car List */}
       {filteredCars.length > 0 ? (
         filteredCars.map((car) => (
           <div key={car.id} className="car-card">
@@ -125,7 +151,7 @@ const CarCard = () => {
               {car?.images?.length > 0 ? (
                 <img
                   src={car.images[0]}
-                  alt={car?.model || "Car Image"}
+                  alt={car.model || "Car Image"}
                   className="car-image"
                   onClick={() => handleClickImage(car.id)}
                 />
@@ -150,10 +176,12 @@ const CarCard = () => {
       ) : (
         <p>No cars available</p>
       )}
-<footer className="footer-section">
-<p>&copy; 2025 Car Marketplace. All rights reserved.</p>
-</footer>
-</div>
+
+      <footer className="footer-section">
+        <p>&copy; 2025 Car Marketplace. All rights reserved.</p>
+      </footer>
+    </div>
   );
 };
+
 export default CarCard;

@@ -9,6 +9,7 @@ import Navbar from "../src/Navbar/navbar";
 import Posts from "./posts/Posts";
 import CarDetails from "./Car/CarDetails";
 import Packages from "./packages/Packages";
+import UpdateCar from "./Car/UpdateCar";
 
 
 
@@ -26,6 +27,8 @@ function App() {
           <Route path="/home" element={<Home />} /> {/* Route */}
           <Route path="/packages" element={<Packages />} /> {/* Route */}
          < Route path="/posts" element={<Posts />} /> {/* Route */}
+         <Route path="/cars/:carId/UpdateCar" element={<UpdateCar />} />
+
          
         </Routes>
       </div>
