@@ -1,35 +1,33 @@
+// src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginForm from "./login/Login";
-import SignUpForm from "../src/signup/Signup";
+import SignUpForm from "./signup/Signup";
 import CarCard from "./Car/CarCard";
 import Home from "./home/Home";
-import "./Car/style.css"
-import Navbar from "../src/Navbar/navbar";
+import "./Car/style.css";
+import Navbar from "./Navbar/navbar";
 import Posts from "./posts/Posts";
 import CarDetails from "./Car/CarDetails";
 import Packages from "./packages/Packages";
 import UpdateCar from "./Car/UpdateCar";
-
-
+import ProtectedRoute from "./ProtectedRoute.js";
 
 function App() {
   return (
     <Router>
       <div className="App">
-      <Navbar/>
+        <Navbar />
         <Routes>
           <Route path="/login" element={<LoginForm />} />
           <Route path="/" element={<LoginForm />} />
           <Route path="/signup" element={<SignUpForm />} />
-          <Route path="/cars" element={<CarCard />} /> {/* Route to view all cars */}
+          <Route path="/cars" element={<CarCard />} />
           <Route path="/cars/:carId" element={<CarDetails />} />
-          <Route path="/home" element={<Home />} /> {/* Route */}
-          <Route path="/packages" element={<Packages />} /> {/* Route */}
-         < Route path="/posts" element={<Posts />} /> {/* Route */}
-         <Route path="/cars/:carId/UpdateCar" element={<UpdateCar />} />
-
-         
+          <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/packages" element={<Packages />} />
+          <Route path="/posts" element={<Posts />} />
+          <Route path="/cars/:carId/UpdateCar" element={<UpdateCar />} />
         </Routes>
       </div>
     </Router>
@@ -37,4 +35,3 @@ function App() {
 }
 
 export default App;
-
