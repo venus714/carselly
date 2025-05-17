@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CarCard.css";
+import { FaQuestionCircle, FaInfoCircle, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const API_URL = "http://127.0.0.1:3000";
 
@@ -166,10 +167,10 @@ const CarCard = () => {
               <p><strong>Model:</strong> {car.model}</p>
               <p><strong>Year:</strong> {car.year_of_manufacture}</p>
 
-              <div className="car-card-actions">
+              {/* <div className="car-card-actions">
                 <button onClick={() => handleUpdate(car.id)} className="update-btn">Update</button>
                 <button onClick={() => handleDelete(car.id)} className="delete-btn">Delete</button>
-              </div>
+              </div> */}
             </div>
           </div>
         ))
@@ -177,9 +178,56 @@ const CarCard = () => {
         <p>No cars available</p>
       )}
 
-      <footer className="footer-section">
-        <p>&copy; 2025 Car Marketplace. All rights reserved.</p>
-      </footer>
+    <footer className="footer-section">
+  <div className="footer-links">
+    <div className="footer-column">
+      <h4><FaQuestionCircle /> FAQ</h4>
+      <ul>
+        <li><a href="/signup">How do I create a new account?</a></li>
+        <li><a href="/refund-policy">What is your refund policy?</a></li>
+        <li><a href="/contact">How can I contact customer support?</a></li>
+      </ul>
+    </div>
+
+    <div className="footer-column">
+      <h4><FaInfoCircle /> About Us</h4>
+      <ul>
+        <li><a href="/about">Our Story</a></li>
+      </ul>
+    </div>
+
+    <div className="footer-column">
+      <h4>Follow Us</h4>
+      <a
+        href="https://github.com/venus714/carselly"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaGithub size={20} style={{ marginRight: "8px" }} />
+        GitHub
+      </a>
+      <a
+        href="https://twitter.com/your_handle"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaTwitter size={20} style={{ marginRight: "8px" }} />
+        Twitter
+      </a>
+      <a
+        href="https://instagram.com/your_handle"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaInstagram size={20} style={{ marginRight: "8px" }} />
+        Instagram
+      </a>
+    </div>
+  </div>
+
+  <p>&copy; 2025 Car Marketplace. All rights reserved.</p>
+</footer>
+
     </div>
   );
 };

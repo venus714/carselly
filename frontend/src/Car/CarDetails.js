@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import './CarDetails.css';
+import { FaQuestionCircle, FaInfoCircle, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const API_URL = "http://127.0.0.1:3000";
 
@@ -164,10 +165,56 @@ const CarDetails = () => {
           <button className="delete-button" onClick={handleDelete}>Delete</button>
         </div>
       )}
+<footer className="footer-section">
+  <div className="footer-links">
+    <div className="footer-column">
+      <h4><FaQuestionCircle /> FAQ</h4>
+      <ul>
+        <li><a href="/signup">How do I create a new account?</a></li>
+        <li><a href="/refund-policy">What is your refund policy?</a></li>
+        <li><a href="/contact">How can I contact customer support?</a></li>
+      </ul>
+    </div>
 
-      <footer className="footer-section">
-        <p>&copy; 2025 Car Marketplace. All rights reserved.</p>
-      </footer>
+    <div className="footer-column">
+      <h4><FaInfoCircle /> About Us</h4>
+      <ul>
+        <li><a href="/about">Our Story</a></li>
+      </ul>
+    </div>
+
+    <div className="footer-column">
+      <h4>Follow Us</h4>
+      <a
+        href="https://github.com/venus714/carselly"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaGithub size={20} style={{ marginRight: "8px" }} />
+        GitHub
+      </a>
+      <a
+        href="https://twitter.com/your_handle"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaTwitter size={20} style={{ marginRight: "8px" }} />
+        Twitter
+      </a>
+      <a
+        href="https://instagram.com/your_handle"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaInstagram size={20} style={{ marginRight: "8px" }} />
+        Instagram
+      </a>
+    </div>
+  </div>
+
+  <p>&copy; 2025 Car Marketplace. All rights reserved.</p>
+</footer>
+
     </div>
   );
 };
