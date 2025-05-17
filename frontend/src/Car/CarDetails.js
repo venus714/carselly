@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 import './CarDetails.css';
 
 const API_URL = "http://127.0.0.1:3000";
@@ -10,11 +11,23 @@ const CarDetails = () => {
   const [car, setCar] = useState(null);
   const [error, setError] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentUserId, setCurrentUserId] = useState(null);
 
   useEffect(() => {
+    // Decode JWT to get logged-in user's ID
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        setCurrentUserId(decoded.user_id);
+      } catch (err) {
+        console.error("Token decode error:", err);
+      }
+    }
+
+    // Fetch car details
     const fetchCarDetails = async () => {
       try {
-        const token = localStorage.getItem("token");
         const response = await fetch(`${API_URL}/posts/${carId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -144,10 +157,13 @@ const CarDetails = () => {
         </div>
       </div>
 
-      <div className="car-details-actions">
-        <button className="update-button" onClick={handleUpdate}>Update</button>
-        <button className="delete-button" onClick={handleDelete}>Delete</button>
-      </div>
+      {/* Only show these buttons if the logged-in user is the post owner */}
+      {currentUserId === car.user_id && (
+        <div className="car-details-actions">
+          <button className="update-button" onClick={handleUpdate}>Update</button>
+          <button className="delete-button" onClick={handleDelete}>Delete</button>
+        </div>
+      )}
 
       <footer className="footer-section">
         <p>&copy; 2025 Car Marketplace. All rights reserved.</p>
