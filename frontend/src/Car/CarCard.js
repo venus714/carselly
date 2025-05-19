@@ -1,3 +1,5 @@
+// CarCard.jsx
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CarCard.css";
@@ -15,7 +17,7 @@ const CarCard = () => {
 
   const navigate = useNavigate();
 
-  // ✅ Function to fetch all car posts
+  // Fetch all car posts
   const fetchCars = async () => {
     const token = localStorage.getItem("authToken");
     if (!token) {
@@ -37,6 +39,7 @@ const CarCard = () => {
 
       const data = await response.json();
       setCars(data);
+      setError(null);
     } catch (err) {
       console.error("Error fetching cars:", err);
       setError("Failed to load cars.");
@@ -47,7 +50,7 @@ const CarCard = () => {
     fetchCars();
   }, []);
 
-  // ✅ Apply filters whenever filters or cars change
+  // Apply filters whenever filters or cars change
   useEffect(() => {
     let filtered = [...cars];
 
@@ -71,7 +74,7 @@ const CarCard = () => {
     setFilteredCars(filtered);
   }, [cars, modelFilter, priceFilter, yearFilter]);
 
-  // ✅ Delete car by ID
+  // Delete car by ID
   const handleDelete = async (carId) => {
     const token = localStorage.getItem("authToken");
     if (!token) {
@@ -93,23 +96,24 @@ const CarCard = () => {
       }
 
       setCars((prevCars) => prevCars.filter((car) => car.id !== carId));
+      setError(null);
     } catch (err) {
       console.error("Delete error:", err);
       setError("Failed to delete the car.");
     }
   };
 
-  // ✅ Navigate to update form
+  // Navigate to update form
   const handleUpdate = (carId) => {
     navigate(`/cars/${carId}`);
   };
 
-  // ✅ Navigate to detailed page
+  // Navigate to detailed page
   const handleClickImage = (carId) => {
     navigate(`/cars/${carId}`);
   };
 
-  // ✅ Create unique model/year options
+  // Create unique model/year options
   const uniqueModels = [...new Set(cars.map((car) => car.model))];
   const uniqueYears = [...new Set(cars.map((car) => car.year_of_manufacture))];
 
@@ -157,77 +161,68 @@ const CarCard = () => {
                   onClick={() => handleClickImage(car.id)}
                 />
               ) : (
-                <p>No images available</p>
+                <div
+                  style={{
+                    height: "200px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    color: "#aaa",
+                    fontStyle: "italic",
+                    backgroundColor: "#eee",
+                  }}
+                >
+                  No Image Available
+                </div>
               )}
             </div>
-
             <div className="car-info">
-              <h3>{car.title}</h3>
-              <p><strong>Price:</strong> ${car.price}</p>
-              <p><strong>Model:</strong> {car.model}</p>
-              <p><strong>Year:</strong> {car.year_of_manufacture}</p>
+              <h3>{car.model || "Unknown Model"}</h3>
+              <p>Year: {car.year_of_manufacture || "N/A"}</p>
+              <p>Price: ${car.price?.toLocaleString() || "N/A"}</p>
+              <p>{car.description || "No description provided."}</p>
 
-              {/* <div className="car-card-actions">
-                <button onClick={() => handleUpdate(car.id)} className="update-btn">Update</button>
-                <button onClick={() => handleDelete(car.id)} className="delete-btn">Delete</button>
-              </div> */}
+              <div className="car-card-actions">
+                {/* 
+                <button className="update-btn" onClick={() => handleUpdate(car.id)}>Update</button>
+                <button className="delete-btn" onClick={() => handleDelete(car.id)}>Delete</button>
+                */}
+              </div>
             </div>
           </div>
         ))
       ) : (
-        <p>No cars available</p>
+        <p>No cars found matching the filter criteria.</p>
       )}
 
-    <footer className="footer-section">
-  <div className="footer-links">
-    <div className="footer-column">
-      <h4><FaQuestionCircle /> FAQ</h4>
-      <ul>
-        <li><a href="/signup">How do I create a new account?</a></li>
-        <li><a href="/refund-policy">What is your refund policy?</a></li>
-        <li><a href="/contact">How can I contact customer support?</a></li>
-      </ul>
-    </div>
-
-    <div className="footer-column">
-      <h4><FaInfoCircle /> About Us</h4>
-      <ul>
-        <li><a href="/about">Our Story</a></li>
-      </ul>
-    </div>
-
-    <div className="footer-column">
-      <h4>Follow Us</h4>
-      <a
-        href="https://github.com/venus714/carselly"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaGithub size={20} style={{ marginRight: "8px" }} />
-        GitHub
-      </a>
-      <a
-        href="https://twitter.com/your_handle"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaTwitter size={20} style={{ marginRight: "8px" }} />
-        Twitter
-      </a>
-      <a
-        href="https://instagram.com/your_handle"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaInstagram size={20} style={{ marginRight: "8px" }} />
-        Instagram
-      </a>
-    </div>
-  </div>
-
-  <p>&copy; 2025 Car Marketplace. All rights reserved.</p>
-</footer>
-
+      {/* Footer Section */}
+      <footer className="footer-section">
+        <div className="footer-links">
+          <div className="footer-column">
+            <h4><FaQuestionCircle /> Support</h4>
+            <ul>
+              <li><a href="#help">Help Center</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="#faq">FAQs</a></li>
+            </ul>
+          </div>
+          <div className="footer-column">
+            <h4><FaInfoCircle /> About Us</h4>
+            <ul>
+              <li><a href="#company">Company Info</a></li>
+              <li><a href="#careers">Careers</a></li>
+              <li><a href="#press">Press</a></li>
+            </ul>
+          </div>
+          <div className="footer-column">
+            <h4>Follow Us</h4>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /> Twitter</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /> Instagram</a>
+          </div>
+        </div>
+        <p>&copy; {new Date().getFullYear()} Car Listings. All rights reserved.</p>
+      </footer>
     </div>
   );
 };

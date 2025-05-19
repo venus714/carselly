@@ -12,6 +12,7 @@ import CarDetails from "./Car/CarDetails";
 import Packages from "./packages/Packages";
 import UpdateCar from "./Car/UpdateCar";
 import ProtectedRoute from "./ProtectedRoute.js";
+import AboutPage from "./About.js";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<LoginForm />} />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/cars" element={<CarCard />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/cars/:carId" element={<CarDetails />} />
           <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path="/packages" element={<Packages />} />
